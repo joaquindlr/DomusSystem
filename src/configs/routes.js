@@ -23,6 +23,11 @@ const routes = [
       {
         component: Error404,
       },
+      // {
+      //   path: "/propiedad",
+      //   component: Propiedad,
+      //   exact: true
+      // }
     ],
   },
 ];

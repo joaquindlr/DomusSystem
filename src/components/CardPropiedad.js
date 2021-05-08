@@ -1,23 +1,6 @@
 const CardPropiedad = ({ imagen, precio }) => {
   return (
     <div className="pt-5 px-5 pb-5">
-      {/* <div
-        style={{
-          backgroundColor: "#2D4F81",
-          color: "white",
-          fontWeight: "bolder",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          borderRadius: 20,
-          position: "absolute",
-          top: "19rem",
-          marginLeft: "0.5rem",
-          zIndex: 1,
-        }}
-      >
-        <p style={{ marginTop: "0.1rem", marginBottom: "0.3rem" }}>{precio}</p>
-      </div> */}
-
       <div className="card" style={{ width: "20rem" }}>
         <img
           src={imagen}
