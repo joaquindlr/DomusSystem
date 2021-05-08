@@ -6,7 +6,9 @@ const Header = () => {
       style={{ backgroundColor: "#2D4F81" }}
       className=" d-flex justify-content-between"
     >
-      <h3 className="text-light py-3 ms-4">Inmobiliaria Domus</h3>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <h3 className="text-light py-3 ms-4">Inmobiliaria Domus</h3>
+      </Link>
       <div className="mt-3">
         <Link className="text-decoration-none text-light me-4 fs-4" to="#">
           Quienes somos

@@ -3,6 +3,7 @@ import LayoutHome from "../layouts/LayoutHome";
 
 //Pages
 import Home from "../pages/Home";
+import Propiedad from "../pages/Propiedad";
 
 //register
 
@@ -21,13 +22,13 @@ const routes = [
         exact: true,
       },
       {
+        path: "/propiedad/:id",
+        component: Propiedad,
+        exact: true,
+      },
+      {
         component: Error404,
       },
-      // {
-      //   path: "/propiedad",
-      //   component: Propiedad,
-      //   exact: true
-      // }
     ],
   },
 ];
