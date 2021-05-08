@@ -18,8 +18,30 @@ const Propiedad = () => {
 
   return (
     <>
-      <h1>Desde propiedades: {params.id}</h1>
-      {casa && <img src={casa.imagen} />}
+      <div className="d-flex mt-5">
+        <div className="ms-5">
+          {casa && (
+            <img
+              className="rounded-3"
+              style={{ width: "40rem" }}
+              src={casa.imagen}
+            />
+          )}
+        </div>
+        <div className="ms-5">
+          <h3
+            style={{
+              color: "white",
+              backgroundColor: "#2D4F81",
+              padding: "1rem",
+              borderRadius: 15,
+              marginLeft: "2rem",
+            }}
+          >
+            Inicia sesion para pedir un turno
+          </h3>
+        </div>
+      </div>
     </>
   );
 };
