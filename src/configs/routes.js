@@ -4,6 +4,7 @@ import LayoutHome from "../layouts/LayoutHome";
 //Pages
 import Home from "../pages/Home";
 import Propiedad from "../pages/Propiedad";
+import MenuEmpleados from "../pages/MenuEmpleados";
 
 //register
 
@@ -24,6 +25,11 @@ const routes = [
       {
         path: "/propiedad/:id",
         component: Propiedad,
+        exact: true,
+      },
+      {
+        path: "/menu-empleados",
+        component: MenuEmpleados,
         exact: true,
       },
       {
