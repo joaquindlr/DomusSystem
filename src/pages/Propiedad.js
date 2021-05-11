@@ -19,9 +19,26 @@ const Propiedad = () => {
   }, [casa]);
 
   return (
-    <div style={{ backgroundColor: "#E2F0FF", paddingBottom: "2rem" }}>
+    <div
+      style={{
+        backgroundColor: "#E2F0FF",
+        paddingBottom: "2rem",
+        paddingTop: "1rem",
+      }}
+    >
+      <div className="ms-5 d-flex">
+        <p className="me-1 bg-success text-light fs-5 px-2 py-1 rounded-3">
+          {casa && casa.condicion}
+        </p>
+        <p
+          style={{ backgroundColor: "#2D4F81" }}
+          className="me-5 text-light fs-5 px-2 py-1 rounded-3"
+        >
+          {casa && casa.precio}
+        </p>
+      </div>
       <div
-        className="d-md-flex justify-content-center py-5 px-3 px-md-5"
+        className="d-md-flex justify-content-center pb-5 px-3 px-md-5"
         style={{
           display: "grid",
           placeItems: "center",

@@ -11,6 +11,7 @@ const Home = () => {
             imagen={casa.imagen}
             precio={casa.precio}
             id={casa.id}
+            condicion={casa.condicion}
             key={index}
           />
         ))}
