@@ -65,7 +65,7 @@ const Propiedad = () => {
                   <input type="date" className="form-control" />
                   <p className="fs-5 fw-bold mt-4">Mensaje: </p>
                   <textarea class="form-control"></textarea>
-                  <button type="button" class="btn btn-primary w-100 mt-3">
+                  <button type="button" className="btn btn-primary w-100 mt-3">
                     Solicitar cita
                   </button>
                 </div>
