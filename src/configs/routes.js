@@ -3,6 +3,9 @@ import LayoutHome from "../layouts/LayoutHome";
 
 //Pages
 import Home from "../pages/Home";
+import RegistroNuevoEmpleado from "../pages/RegistroNuevoEmpleado";
+import NuevoClienteParticular from "../pages/NuevoClienteParticular";
+import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 
 //register
 
@@ -18,6 +21,21 @@ const routes = [
       {
         path: "/",
         component: Home,
+        exact: true,
+      },
+      {
+        path: "/regempleado",
+        component: RegistroNuevoEmpleado,
+        exact: true,
+      },
+      {
+        path: "/regparticular",
+        component: NuevoClienteParticular,
+        exact: true,
+      },
+      {
+        path: "/regcorporativo",
+        component: NuevoClienteCorporativo,
         exact: true,
       },
       {

@@ -7,7 +7,7 @@ const Home = () => {
       precio: "$7M",
       imagen: "https://i.blogs.es/c68014/casa-3d/450_1000.jpeg",
       id: 1,
-    },
+    }
     ,
     {
       precio: "$10M",
