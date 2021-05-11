@@ -4,16 +4,21 @@ import LayoutHome from "../layouts/LayoutHome";
 //Pages
 import Home from "../pages/Home";
 import Propiedad from "../pages/Propiedad";
-import MenuEmpleados from "../pages/MenuEmpleados";
 import RegistroNuevoEmpleado from "../pages/RegistroNuevoEmpleado";
 import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
+import MenuEmpleado from "../pages/MenuEmpleado";
+import Documentacion from "../pages/Documentacion";
 
 //register
 
 //Other
 import Error404 from "../pages/Error404";
 import NuevaPropiedad from "../pages/NuevaPropiedad";
+//agenda
+import agenda from "../pages/agenda";
+//cita
+import cita from "../pages/cita";
 
 const routes = [
   {
@@ -27,13 +32,22 @@ const routes = [
         exact: true,
       },
       {
+        path: "/agenda",
+        component: agenda,
+        exact: true,
+      },
+      {
+        path: "/cita",
+        component: cita,
+        exact: true,
+      },
+
+      {
         path: "/propiedad/:id",
         component: Propiedad,
         exact: true,
       },
       {
-        path: "/menu-empleados",
-        component: MenuEmpleados,
         path: "/registro-empleado",
         component: RegistroNuevoEmpleado,
         exact: true,
@@ -54,8 +68,24 @@ const routes = [
         exact: true,
       },
       {
+        path: "/menu-empleado",
+        component: MenuEmpleado,
+        exact: true,
+      },
+      {
+        path: "/documentacion",
+        component: Documentacion,
+        exact: true,
+      },
+      {
         component: Error404,
       },
+
+      // {
+      //   path: "/propiedad",
+      //   component: Propiedad,
+      //   exact: true
+      // }
     ],
   },
 ];

@@ -38,5 +38,9 @@
 }
 
 .imput {
-width: 20rem;
+  width: 20rem;
+}
+button {
+  margin-top: 1rem;
+  background-color: #2d4f81;
 }
