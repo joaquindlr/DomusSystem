@@ -22,28 +22,28 @@ const Documentacion = () => {
             backgroundColor: "white",
           }}
         >
-          <div class="container">
-            <div class="row border m-3">
-              <div class="col my-1">
-                <div class="row mx-auto ">
-                  <div class="col-9 pt-3 pe-2 m-0  ">
+          <div className="container">
+            <div className="row border m-3">
+              <div className="col my-1">
+                <div className="row mx-auto ">
+                  <div className="col-9 pt-3 pe-2 m-0  ">
                     <input
                       type="text"
-                      class="form-control "
+                      className="form-control "
                       placeholder="Documento"
                       aria-label="Recipient's username"
                       aria-describedby="button-addon2"
                     />
                   </div>
-                  <div class="col-3 p-0 pb-1 ">
-                    <div class=" p-0 ">
-                      <button class="btn btn-secondary" type="button">
+                  <div className="col-3 p-0 pb-1 ">
+                    <div className=" p-0 ">
+                      <button className="btn btn-secondary" type="button">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
                           fill="currentColor"
-                          class="bi bi-search"
+                          className="bi bi-search"
                           viewBox="0 0 16 16"
                         >
                           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -52,14 +52,14 @@ const Documentacion = () => {
                     </div>
                   </div>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button class="btn btn-primary" type="button">
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button className="btn btn-primary" type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-file-earmark-diff-fill"
+                      className="bi bi-file-earmark-diff-fill"
                       viewBox="0 0 16 16"
                     >
                       <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8 6a.5.5 0 0 1 .5.5V8H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V9H6a.5.5 0 0 1 0-1h1.5V6.5A.5.5 0 0 1 8 6zm-2.5 6.5A.5.5 0 0 1 6 12h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
@@ -68,8 +68,8 @@ const Documentacion = () => {
                   </button>
                 </div>
               </div>
-              <div class="col mt-3">
-                <table class="table table-bordered border-primary">
+              <div className="col mt-3">
+                <table className="table table-bordered border-primary">
                   <thead>
                     <tr>
                       <th scope="col">Nombre</th>
