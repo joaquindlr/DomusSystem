@@ -11,6 +11,7 @@ import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 
 //Other
 import Error404 from "../pages/Error404";
+import NuevaPropiedad from "../pages/NuevaPropiedad";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
       {
         path: "/regcorporativo",
         component: NuevoClienteCorporativo,
+        exact: true,
+      },
+      {
+        path: "/nueva-propiedad",
+        component: NuevaPropiedad,
         exact: true,
       },
       {
