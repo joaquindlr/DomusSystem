@@ -33,17 +33,17 @@ const routes = [
       {
         path: "/menu-empleados",
         component: MenuEmpleados,
-        path: "/regempleado",
+        path: "/registro-empleado",
         component: RegistroNuevoEmpleado,
         exact: true,
       },
       {
-        path: "/regparticular",
+        path: "/registro-particular",
         component: NuevoClienteParticular,
         exact: true,
       },
       {
-        path: "/regcorporativo",
+        path: "/registro-corporativo",
         component: NuevoClienteCorporativo,
         exact: true,
       },
