@@ -8,6 +8,10 @@ import Home from "../pages/Home";
 
 //Other
 import Error404 from "../pages/Error404";
+//agenda
+import agenda from "../pages/agenda";
+//cita
+import cita from "../pages/cita";
 
 const routes = [
   {
@@ -20,9 +24,21 @@ const routes = [
         component: Home,
         exact: true,
       },
+       {
+        path: "/agenda",
+        component: agenda,
+        exact:true,
+      },
+      {
+        path: "/cita",
+        component: cita,
+        exact:true,
+      },
+      
       {
         component: Error404,
       },
+     
       // {
       //   path: "/propiedad",
       //   component: Propiedad,
