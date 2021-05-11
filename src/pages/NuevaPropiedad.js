@@ -8,7 +8,9 @@ const NuevaPropiedad = () => {
   const [parte, setParte] = useState(1);
 
   const siguienteParte = () => {
-    setParte(parte + 1);
+    if (parte < 3) {
+      setParte(parte + 1);
+    }
   };
 
   return (
@@ -42,12 +44,26 @@ const NuevaPropiedad = () => {
               {parte == 2 && <Parte2 />}
               {parte == 3 && <Parte3 />}
             </form>
-            <button
-              className="btn btn-primary w-100"
-              onClick={() => siguienteParte()}
-            >
-              Siguiente
-            </button>
+            {parte != 3 && (
+              <>
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={() => siguienteParte()}
+                >
+                  Siguiente
+                </button>
+              </>
+            )}
+            {parte == 3 && (
+              <>
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={() => alert("Registro compleatado exitosamente")}
+                >
+                  Confirmar
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
