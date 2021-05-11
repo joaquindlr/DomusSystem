@@ -9,6 +9,7 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
+import Ejemplo from "../pages/ejemplo";
 
 //register
 
@@ -56,6 +57,7 @@ const routes = [
         component: Documentacion,
         exact: true,
       },
+      { path: "/ejemplo", component: Ejemplo, exact: true },
       {
         component: Error404,
       },
