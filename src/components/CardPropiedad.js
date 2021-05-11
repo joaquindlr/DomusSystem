@@ -1,7 +1,20 @@
-const CardPropiedad = ({ imagen, precio }) => {
+import React from "react";
+import { useHistory } from "react-router-dom";
+
+const CardPropiedad = ({ imagen, precio, id, condicion }) => {
+  const history = useHistory();
+
+  const irPropiedad = () => {
+    history.push(`/propiedad/${id}`);
+  };
+
   return (
     <div className="pt-5 px-5 pb-5">
-      <div className="card" style={{ width: "20rem" }}>
+      <div
+        className="card"
+        style={{ width: "20rem", cursor: "pointer" }}
+        onClick={() => irPropiedad()}
+      >
         <img
           src={imagen}
           alt="casa"
@@ -24,6 +37,26 @@ const CardPropiedad = ({ imagen, precio }) => {
               style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}
             >
               {precio}
+            </p>
+          </div>
+        </div>
+        <div className="card-img-overlay">
+          <div
+            className="bg-success"
+            style={{
+              justifyContent: "center",
+              display: "flex",
+              width: "6rem",
+              borderRadius: 20,
+              marginLeft: "5.5rem",
+              marginTop: "10.75rem",
+            }}
+          >
+            <p
+              className="text-light fw-bold"
+              style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}
+            >
+              {condicion}
             </p>
           </div>
         </div>
