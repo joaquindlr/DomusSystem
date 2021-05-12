@@ -1,56 +1,69 @@
-import React from "react";
-// import Parte1 from "../components/parte1";
-// import Parte2 from "../components/parte2";
-// import Parte3 from "../components/parte3";
+import React, { useState } from "react";
+import ModalPropiedades from "../components/ModalPropiedades";
+import ModalAgente from "../components/ModalAgente";
+import ModalCita from "../components/ModalCita";
 
-const agenda = () => {
-  // const [parte, setParte] = useState(1);
-  // const Parteanterior = () => {
-  //   if (parte > 1) {
-  //     setParte(parte - 1);
-  //   }
-  // };
+const Agenda = () => {
+  const [visible, setVisible] = useState(false);
+  const handleVisible = () => {
+    setVisible(false);
+  };
+  const [visible1, setVisible1] = useState(false);
+  const handleVisible1 = () => {
+    setVisible1(false);
+  };
+  const [visible2, setVisible2] = useState(false);
+  const handleVisible2 = () => {
+    setVisible2(false);
+  };
+
   return (
     <>
-      {/* <form className="">
-        {parte == 1 && <Parte1 />}
-        {parte == 2 && <Parte2 />}
-        {parte == 3 && <Parte3 />}
-      </form> */}
-      <div class="container">
-        <div class="row">
-          <div class="col-auto">
-            <input type="date" className="form-control input" />
+      <div classNameName="container">
+        <ModalPropiedades visible={visible} handleVisible={handleVisible} />
+        <ModalAgente visible1={visible1} handleVisible1={handleVisible1} />
+        <ModalCita visible2={visible2} handleVisible2={handleVisible2} />
+        <div className="row">
+          <div className="col-auto">
+            <input type="date" classNameName="form-control input" />
             <br />
             <br />
             <br />
             <br />
             <br />
             <br />
-            <div class="row">
-              {/* <button
+            <div className="row">
+              <button
+                onClick={() => setVisible(true)}
                 type="button"
-                class="btn btn-secondary btn-sm"
-                onClick={() => Parteanterior()}
+                className="btn btn-secondary btn-sm"
               >
                 Filtrar por Propiedades
-              </button> */}
+              </button>
             </div>
             <br />
-            <div class="row">
-              <button type="button" class="btn btn-secondary btn-sm">
+            <div className="row">
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                onClick={() => setVisible1(true)}
+              >
                 Filtrar por Agentes
               </button>
             </div>
             <br />
-            <div class="row">
-              <button type="button" class="btn btn-secondary btn-sm">
+            <div className="row">
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                onClick={() => setVisible2(true)}
+              >
                 Agendar Cita
               </button>
             </div>
           </div>
-          <div class="col">
-            <table class="table table-bordered table-striped   ">
+          <div className="col">
+            <table className="table table-bordered table-striped   ">
               <thead>
                 <th scope="col"></th>
                 <th scope="col">Dom</th>
@@ -245,4 +258,4 @@ const agenda = () => {
     </>
   );
 };
-export default agenda;
+export default Agenda;

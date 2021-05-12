@@ -17,14 +17,14 @@ const Header = () => {
           Contactenos
         </Link>
         <Link
-          to="#"
+          to="/login"
           style={{ color: "#2D4F81", fontWeight: "bold" }}
           className="btn btn-light fs-5 me-4 ms-4 btn-sm"
         >
           Ingresar
         </Link>
         <Link
-          to="#"
+          to="/registro"
           style={{ color: "#2D4F81", fontWeight: "bold" }}
           className="btn btn-light fs-5 me-4 btn-sm"
         >
