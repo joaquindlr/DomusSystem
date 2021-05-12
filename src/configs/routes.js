@@ -9,7 +9,7 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
-
+import Login from "../pages/login"
 //register
 
 //Other
@@ -69,6 +69,11 @@ const routes = [
       {
         path: "/documentacion",
         component: Documentacion,
+        exact: true,
+      },
+      {
+        path: "/login",
+        component: Login,
         exact: true,
       },
       {
