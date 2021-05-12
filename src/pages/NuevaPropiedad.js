@@ -12,6 +12,11 @@ const NuevaPropiedad = () => {
       setParte(parte + 1);
     }
   };
+  const Parteanterior = () => {
+    if (parte > 1) {
+      setParte(parte - 1);
+    }
+  };
 
   return (
     <>
@@ -44,26 +49,69 @@ const NuevaPropiedad = () => {
               {parte == 2 && <Parte2 />}
               {parte == 3 && <Parte3 />}
             </form>
-            {parte != 3 && (
-              <>
-                <button
-                  className="btn btn-primary w-100"
-                  onClick={() => siguienteParte()}
-                >
-                  Siguiente
-                </button>
-              </>
-            )}
-            {parte == 3 && (
-              <>
-                <button
-                  className="btn btn-primary w-100"
-                  onClick={() => alert("Registro compleatado exitosamente")}
-                >
-                  Confirmar
-                </button>
-              </>
-            )}
+            <div className="container">
+              <div className="row">
+                <div className="col">
+                  {parte == 2 && (
+                    <>
+                      <button
+                        className="btn btn-primary w-100 imput"
+                        onClick={() => Parteanterior()}
+                      >
+                        Anterior
+                      </button>
+                    </>
+                  )}
+                  {parte == 3 && (
+                    <>
+                      <button
+                        className="btn btn-primary w-100 imput"
+                        onClick={() => Parteanterior()}
+                      >
+                        Anterior
+                      </button>
+                    </>
+                  )}
+                </div>
+                <div className="col">
+                  <br />
+                  {parte == 1 && (
+                    <>
+                      <button
+                        className="btn btn-primary w-100 imput"
+                        onClick={() => siguienteParte()}
+                      >
+                        Siguiente
+                      </button>
+                    </>
+                  )}
+                </div>
+                <div className="col">
+                  {parte == 2 && (
+                    <>
+                      <button
+                        className="btn btn-primary w-100 imput"
+                        onClick={() => siguienteParte()}
+                      >
+                        Siguiente
+                      </button>
+                    </>
+                  )}
+                  {parte == 3 && (
+                    <>
+                      <button
+                        className="btn btn-primary w-100 imput"
+                        onClick={() =>
+                          alert("Registro compleatado exitosamente")
+                        }
+                      >
+                        Confirmar
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
