@@ -25,12 +25,12 @@ const Reportes = () => {
                 }}
               >
                 <div className="d-grid gap-2 col-5">
-                  <a className="btn btn-primary" href="#" role="button">
+                  <button className="btn btn-primary" type="button">
                     Generar Reportes
-                  </a>
-                  <a className="btn btn-primary" href="/consulta-reporte" role="button">
+                  </button>
+                  <button className="btn btn-primary" type="button">
                     Visualizar Reporte
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
 import Login from "../pages/login";
 import Reportes from "../pages/Reportes";
-import ConsultaReporte from "../pages/ConsultaReporte"
+import ConsultaReporte from "../pages/ConsultaReporte";
 //register
 
 //Other
