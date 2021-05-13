@@ -1,13 +1,37 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../auth/userContext";
+
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
+  const history = useHistory();
+
+  const [empleado, setEmpleado] = useState(false);
   const [logeado, setLogeado] = useState(false);
-  const handleLogeado = () => {
-    setLogeado(true);
-  };
+  const [userData, setUserData] = useContext(UserContext);
+  useEffect(() => {
+    console.log("Context: ", userData);
+    if (userData.email != "") {
+      console.log("esta logeado");
+      setLogeado(true);
+      if (userData.empleado) {
+        setEmpleado(true);
+      }
+    } else {
+      console.log("no esta logeado");
+    }
+  }, [userData]);
+
   const cerrarSesion = () => {
+    setUserData({
+      email: "",
+      pass: "",
+      empleado: false,
+    });
+    setEmpleado(false);
     setLogeado(false);
+    history.push("/");
   };
 
   return (
@@ -44,9 +68,26 @@ const Header = () => {
           </>
         ) : (
           <>
+            {empleado && (
+              <Link
+                to="/menu-empleado"
+                style={{
+                  color: "#2D4F81",
+                  fontWeight: "bold",
+                  marginTop: "-0.5rem",
+                }}
+                className="btn btn-light fs-5 me-4 btn-sm"
+              >
+                Menu
+              </Link>
+            )}
             <button
               onClick={() => cerrarSesion()}
-              style={{ color: "#2D4F81", fontWeight: "bold" }}
+              style={{
+                color: "#2D4F81",
+                fontWeight: "bold",
+                marginTop: "-0.5rem",
+              }}
               className="btn btn-light fs-5 me-4 btn-sm"
             >
               Cerrar sesion
