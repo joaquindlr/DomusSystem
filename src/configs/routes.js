@@ -9,7 +9,8 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
-import Login from "../pages/login"
+import Login from "../pages/login";
+import Registro from "../pages/registro";
 //register
 
 //Other
@@ -30,17 +31,17 @@ const routes = [
         component: Home,
         exact: true,
       },
-       {
+      {
         path: "/agenda",
         component: agenda,
-        exact:true,
+        exact: true,
       },
       {
         path: "/cita",
         component: cita,
-        exact:true,
+        exact: true,
       },
-      
+
       {
         path: "/propiedad/:id",
         component: Propiedad,
@@ -77,9 +78,14 @@ const routes = [
         exact: true,
       },
       {
+        path: "/registro",
+        component: Registro,
+        exact: true,
+      },
+      {
         component: Error404,
       },
-     
+
       // {
       //   path: "/propiedad",
       //   component: Propiedad,
