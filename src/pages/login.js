@@ -1,28 +1,64 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+
+import users from "../configs/users";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
+  const [usuario, setUsuario] = useState({});
+  const history = useHistory();
 
   const onSubmit = (data) => {
     validar(data);
   };
 
+  // useEffect(() => {
+  //   if (usuario != {}) {
+  //     console.log("guardado: ", usuario);
+  //   }
+  // }, [usuario]);
+
   const validar = (data) => {
-    console.log("asdasd", data.contraseña, data.email, data);
-    if (data.contraseña == "") {
+    // console.log("asdasd", data.contraseña, data.email, data);
+    if (data.contraseña === "") {
       setErrorPassword(true);
     } else {
       setErrorPassword(false);
+      logear(data);
     }
-    if (data.email == "") {
+    if (data.email === "") {
       setErrorEmail(true);
     } else {
       setErrorEmail(false);
+      logear(data);
     }
+  };
+
+  const correcto = (user) => {
+    setUsuario(user);
+    if (user.empleado) {
+      console.log("es empleado");
+      history.push("/menu-empleado");
+    } else {
+      console.log("no es empleado");
+      history.push("/");
+    }
+  };
+
+  const logear = (data) => {
+    // console.log("entrada", data);
+    users.map((user) => {
+      // console.log(user.pass, parseInt(data.contraseña));
+      if (data.email === user.email) {
+        if (parseInt(data.contraseña) === user.pass) {
+          correcto(user);
+        }
+      }
+    });
   };
 
   return (
@@ -47,6 +83,7 @@ const Login = () => {
         }}
       >
         <div>
+          <h2 className="mb-4">Iniciar sesion</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div class="mb-3">
               <label for="email" class="form-label">
@@ -75,7 +112,7 @@ const Login = () => {
               />
               {errorPassword && <p>La contraseña esta vacia</p>}
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" className="btn btn-primary w-100">
               Iniciar sesion
             </button>
           </form>
