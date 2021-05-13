@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../auth/userContext";
 
 const MenuEmpleado = () => {
+  const [logeado, setLogeado] = useState(false);
+  const [userData, setUserData] = useContext(UserContext);
+
+  useEffect(() => {
+    console.log("Context: ", userData);
+    if (userData.email != "") {
+      setLogeado(true);
+      console.log("logeado");
+    } else {
+      console.log("no esta logeado");
+      setLogeado(false);
+    }
+  }, [userData]);
+
   return (
     <>
+      {logeado ? (
+        <> 
       <div
         style={{
           display: "grid",
@@ -124,9 +141,14 @@ const MenuEmpleado = () => {
             </button>
           </div>
         </div>
-      </div>
+        </>
+      ) : (
+        <>Error 404</>
+      )}
     </>
   );
 };
 
 export default MenuEmpleado;
+
+

@@ -12,6 +12,7 @@ import Documentacion from "../pages/Documentacion";
 import Login from "../pages/login";
 import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
+import Registro from "../pages/registro";
 //register
 
 //Other
@@ -32,17 +33,17 @@ const routes = [
         component: Home,
         exact: true,
       },
-       {
+      {
         path: "/agenda",
         component: agenda,
-        exact:true,
+        exact: true,
       },
       {
         path: "/cita",
         component: cita,
-        exact:true,
+        exact: true,
       },
-      
+
       {
         path: "/propiedad/:id",
         component: Propiedad,
@@ -84,14 +85,15 @@ const routes = [
         exact: true,
       },
       {
-        path: "/consulta-reporte",
-        component: ConsultaReporte,
+        path: "/registro",
+        component: Registro,
         exact: true,
       },
+      { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
       {
         component: Error404,
       },
-     
+
       // {
       //   path: "/propiedad",
       //   component: Propiedad,

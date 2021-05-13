@@ -1,29 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { UserContext } from "../auth/userContext";
 
 import users from "../configs/users";
 
-const Login = () => {
+const Registro = () => {
   const { register, handleSubmit } = useForm();
 
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
-  const [usuario, setUsuario] = useState({});
-  const history = useHistory();
+  const [errorRePassword, setErrorRePassword] = useState(false);
 
-  const [userData, setUserData] = useContext(UserContext);
+  const history = useHistory();
 
   const onSubmit = (data) => {
     validar(data);
+    console.log(data);
   };
-
-  // useEffect(() => {
-  //   if (usuario != {}) {
-  //     console.log("guardado: ", usuario);
-  //   }
-  // }, [usuario]);
 
   const validar = (data) => {
     // console.log("asdasd", data.contraseña, data.email, data);
@@ -31,36 +24,17 @@ const Login = () => {
       setErrorPassword(true);
     } else {
       setErrorPassword(false);
-      logear(data);
     }
     if (data.email === "") {
       setErrorEmail(true);
     } else {
       setErrorEmail(false);
-      logear(data);
     }
-  };
-
-  const correcto = (user) => {
-    setUsuario(user);
-    setUserData(user);
-    if (user.empleado) {
-      history.push("/menu-empleado");
+    if (data.recontraseña === "") {
+      setErrorRePassword(true);
     } else {
-      history.push("/");
+      setErrorRePassword(false);
     }
-  };
-
-  const logear = (data) => {
-    // console.log("entrada", data);
-    users.map((user) => {
-      // console.log(user.pass, parseInt(data.contraseña));
-      if (data.email === user.email) {
-        if (parseInt(data.contraseña) === user.pass) {
-          correcto(user);
-        }
-      }
-    });
   };
 
   return (
@@ -85,7 +59,7 @@ const Login = () => {
         }}
       >
         <div>
-          <h2 className="mb-4 text-center">Iniciar sesion</h2>
+          <h2 className="mb-4 text-center">Registrarse</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div class="mb-3">
               <label for="email" class="form-label">
@@ -114,8 +88,21 @@ const Login = () => {
               />
               {errorPassword && <p>La contraseña esta vacia</p>}
             </div>
+            <div class="mb-3">
+              <label for="contraseña" class="form-label">
+                Repita contraseña
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                name="recontraseña"
+                id="recontraseña"
+                {...register("recontraseña")}
+              />
+              {errorRePassword && <p>Repetir contraseña esta vacio</p>}
+            </div>
             <button type="submit" className="btn btn-primary w-100">
-              Iniciar sesion
+              Registrarse
             </button>
           </form>
         </div>
@@ -124,4 +111,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registro;
