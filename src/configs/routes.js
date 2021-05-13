@@ -9,7 +9,9 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
-import Login from "../pages/login"
+import Login from "../pages/login";
+import Reportes from "../pages/Reportes";
+import ConsultaReporte from "../pages/ConsultaReporte"
 //register
 
 //Other
@@ -74,6 +76,16 @@ const routes = [
       {
         path: "/login",
         component: Login,
+        exact: true,
+      },
+      {
+        path: "/reportes",
+        component: Reportes,
+        exact: true,
+      },
+      {
+        path: "/consulta-reporte",
+        component: ConsultaReporte,
         exact: true,
       },
       {
