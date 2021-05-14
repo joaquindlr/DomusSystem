@@ -14,6 +14,7 @@ import Solicitudes from "../pages/Solicitudes";
 import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
 import Registro from "../pages/registro";
+import Consultas from "../pages/Consultas"
 //register
 
 //Other
@@ -101,7 +102,14 @@ const routes = [
         component: Registro,
         exact: true,
       },
-      { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
+      { path: "/consulta-reporte",
+      component: ConsultaReporte,
+      exact: true 
+      },
+      { path:"/consultas",
+      component: Consultas,
+      exact: true
+      },
       {
         component: Error404,
       },

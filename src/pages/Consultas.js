@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Reportes = () => {
+const Consulta = () => {
   return (
     <>
       <div className="container">
@@ -13,12 +13,12 @@ const Reportes = () => {
             paddingBottom: "2rem",
           }}
         >
-          <div className="row">
-            <div className="col m-3">
+          <div className="row px-5">
+            <div className="col">
               <div
-                className="rounded-3 py-5 shadow "
+                className="rounded-3 py-5 px-5 shadow "
                 style={{
-                  width: "30rem",
+                  width: "100%",
                   height: "100%",
                   display: "grid",
                   placeItems: "center",
@@ -27,10 +27,16 @@ const Reportes = () => {
               >
                 <div className="d-grid gap-2 col-5">
                   <Link to="/" className="btn btn-primary">
-                    Generar Reportes
+                    Clientes
                   </Link>
                   <Link to="/" className="btn btn-primary">
-                    Visualizar Reporte
+                    Propiedades
+                  </Link>
+                  <Link to="/" className="btn btn-primary">
+                    Reportes
+                  </Link>
+                  <Link to="/" className="btn btn-primary">
+                    Empleados
                   </Link>
                 </div>
               </div>
@@ -41,5 +47,4 @@ const Reportes = () => {
     </>
   );
 };
-
-export default Reportes;
+export default Consulta;
