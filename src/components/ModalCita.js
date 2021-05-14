@@ -15,20 +15,22 @@ const Modal = ({ visible2, handleVisible2 }) => {
           <div
             style={{
               backgroundColor: "white",
-              height: "20rem",
-              width: "40rem",
+              height: "90%",
+              width: "45rem",
               position: "fixed",
-              top: "5rem",
-              bottom: "2rem",
-              right: "35%",
-              borderRadius: 10,
+              top: "3rem",
+              bottom: 0,
+              right: "30%",
+              borderRadius: 5,
+              overflowY: "scroll",
             }}
           >
             <>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end m-3">
                 <button
+                  class="btn btn-outline-secondary"
+                  type="button"
                   onClick={() => handleVisible2(false)}
-                  className="btn btn-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -51,110 +53,117 @@ const Modal = ({ visible2, handleVisible2 }) => {
                 }}
               >
                 <div
-                  className="rounded-3 py-5  "
+                  className="rounded-3 "
                   style={{
-                    width: "35rem",
                     display: "grid",
                     placeItems: "center",
                     backgroundColor: "white",
                   }}
                 >
-                  <div
-                    style={{
-                      display: "grid",
-                      placeItems: "center",
-                    }}
-                  >
-                    <form className="">
-                      <div class="d-grid gap-2 d-md-block">
-                        <legend for="Agregarcita" class="form-label">
-                          Agendar Cita
-                        </legend>
-                      </div>
-                      <br />
-                      <br />
-                      <br />
-                      <br />
-                      <label for="CodCli" className="form-label">
-                        Ingresar Codigo de Cliente
-                      </label>
+                  <div>
+                    <div className="">
+                      <h3
+                        for="Agregarcita"
+                        className="form-label text-center"
+                        style={{ marginBottom: "-5rem" }}
+                      >
+                        Agendar Cita
+                      </h3>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <label for="CodCli" className="form-label">
+                      Ingresar codigo de cliente
+                    </label>
+                    <div className="d-flex ">
                       <input
                         type="number"
                         className="form-control imput"
                         id="CodCli"
-                        placeholder="Codigo de Cliente"
+                        placeholder="Codigo cliente..."
+                        style={{ height: "2.5rem" }}
                       />
-                      <div class="d-grid gap-2 d-md-block">
-                        <button
-                          type="button"
-                          className="btn btn-primary btn-sm"
-                        >
-                          Buscar
-                        </button>
-                      </div>
-                      <br />
-                      <label for="CodProp" className="form-label">
-                        Ingresar Codigo de Propiedad
-                      </label>
+                      <button
+                        className="btn btn-primary btn-sm"
+                        style={{
+                          height: "2.5rem",
+                          marginTop: 0,
+                          marginLeft: "0.5rem",
+                        }}
+                      >
+                        Buscar
+                      </button>
+                    </div>
+                    <br />
+                    <label for="CodCli" className="form-label">
+                      Ingresar codigo de propiedad
+                    </label>
+                    <div className="d-flex ">
                       <input
-                        type="text"
+                        type="number"
                         className="form-control imput"
-                        id="CodProp"
-                        placeholder="Codigo de Propiedad"
+                        id="CodCli"
+                        placeholder="Codigo de cliente..."
+                        style={{ height: "2.5rem" }}
                       />
-                      <div class="d-grid gap-2 d-md-block">
-                        <button
-                          type="button"
-                          className="btn btn-primary btn-sm"
-                        >
-                          Buscar
-                        </button>
-                      </div>
-                      <br />
-                      <div className="container">
-                        <div className="row">
-                          <div className="col">
-                            <label for="HoraIn" class="form-label">
-                              Desde
-                            </label>
-                            <input
-                              type="time"
-                              className="form-control"
-                              id="HoraIn"
-                            />
-                          </div>
-                          <div className="col">
-                            <label for="HoraFin" className="form-label">
-                              Hasta
-                            </label>
-                            <input
-                              type="time"
-                              className="form-control"
-                              id="HoraFin"
-                            />
-                          </div>
+                      <button
+                        className="btn btn-primary btn-sm"
+                        style={{
+                          height: "2.5rem",
+                          marginTop: 0,
+                          marginLeft: "0.5rem",
+                        }}
+                      >
+                        Buscar
+                      </button>
+                    </div>
+
+                    <br />
+                    <div className="container">
+                      <div className="row">
+                        <div className="col">
+                          <label for="HoraIn" class="form-label">
+                            Desde
+                          </label>
+                          <input
+                            type="time"
+                            className="form-control"
+                            id="HoraIn"
+                          />
+                        </div>
+                        <div className="col">
+                          <label for="HoraFin" className="form-label">
+                            Hasta
+                          </label>
+                          <input
+                            type="time"
+                            className="form-control"
+                            id="HoraFin"
+                          />
                         </div>
                       </div>
-                      <br />
-                      <label for="Fecha" className="form-label">
-                        Fecha
-                      </label>
-                      <input
-                        type="date"
-                        className="form-control imput"
-                        id="Fecha"
-                      />
-                      <br />
-                      <br />
-                      <br />
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary btn-sm ">
-                          Agregar turno
-                        </button>
-                      </div>
+                    </div>
+                    <br />
+                    <label for="Fecha" className="form-label">
+                      Fecha
+                    </label>
+                    <input
+                      type="date"
+                      className="form-control imput"
+                      id="Fecha"
+                    />
+                    <br />
+                    <br />
+                    <br />
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button type="button" class="btn btn-primary btn-sm ">
+                        Agregar turno
+                      </button>
+                    </div>
 
-                      <br />
-                    </form>
+                    <br />
                   </div>
                 </div>
               </div>
