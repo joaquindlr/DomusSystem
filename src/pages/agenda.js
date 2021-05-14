@@ -8,10 +8,12 @@ const Agenda = () => {
   const handleVisible = () => {
     setVisible(false);
   };
+
   const [visible1, setVisible1] = useState(false);
   const handleVisible1 = () => {
     setVisible1(false);
   };
+
   const [visible2, setVisible2] = useState(false);
   const handleVisible2 = () => {
     setVisible2(false);

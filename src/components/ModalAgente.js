@@ -25,7 +25,7 @@ const Modal = ({ visible1, handleVisible1 }) => {
             }}
           >
             <>
-              <div class="d-grid gap-2  justify-content-md-end">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button
                   onClick={() => handleVisible1(false)}
                   className="btn btn-white"

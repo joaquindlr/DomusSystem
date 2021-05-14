@@ -8,14 +8,10 @@ const NuevaPropiedad = () => {
   const [parte, setParte] = useState(1);
 
   const siguienteParte = () => {
-    if (parte < 3) {
-      setParte(parte + 1);
-    }
+    setParte(parte + 1);
   };
   const Parteanterior = () => {
-    if (parte > 1) {
-      setParte(parte - 1);
-    }
+    setParte(parte - 1);
   };
 
   return (

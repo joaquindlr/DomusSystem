@@ -15,11 +15,11 @@ const Modal = ({ visible2, handleVisible2 }) => {
           <div
             style={{
               backgroundColor: "white",
-              height: "30rem",
-              width: "50rem",
+              height: "20rem",
+              width: "40rem",
               position: "fixed",
-              top: "10rem",
-              bottom: 0,
+              top: "5rem",
+              bottom: "2rem",
               right: "35%",
               borderRadius: 10,
             }}
@@ -28,7 +28,7 @@ const Modal = ({ visible2, handleVisible2 }) => {
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button
                   onClick={() => handleVisible2(false)}
-                  className="btn btn-light me-md-20"
+                  className="btn btn-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -42,53 +42,120 @@ const Modal = ({ visible2, handleVisible2 }) => {
                   </svg>
                 </button>
               </div>
-              <br />
-              <div className="container">
-                <div className="row">
-                  <div className="col ">
-                    <h4>Agendar Cita</h4>
-                  </div>
-                  <div className="col "></div>
-                  <div className="col ">
-                    <h4>Agregar cliente</h4>
-                  </div>
-                  <div className="col ">
-                    <div className="mt-n2 p-n2 justify-content-md-end">
-                      <button className="btn btn-light me-md-20">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          className="bi bi-plus-lg"
-                          viewBox="0 0 16 16"
+              <div
+                style={{
+                  display: "grid",
+                  placeItems: "center",
+                  backgroundColor: "white",
+                  paddingTop: 0,
+                }}
+              >
+                <div
+                  className="rounded-3 py-5  "
+                  style={{
+                    width: "35rem",
+                    display: "grid",
+                    placeItems: "center",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      placeItems: "center",
+                    }}
+                  >
+                    <form className="">
+                      <div class="d-grid gap-2 d-md-block">
+                        <legend for="Agregarcita" class="form-label">
+                          Agendar Cita
+                        </legend>
+                      </div>
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <label for="CodCli" className="form-label">
+                        Ingresar Codigo de Cliente
+                      </label>
+                      <input
+                        type="number"
+                        className="form-control imput"
+                        id="CodCli"
+                        placeholder="Codigo de Cliente"
+                      />
+                      <div class="d-grid gap-2 d-md-block">
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-sm"
                         >
-                          <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col ">
-                    <div class="input-group mb-3">
+                          Buscar
+                        </button>
+                      </div>
+                      <br />
+                      <label for="CodProp" className="form-label">
+                        Ingresar Codigo de Propiedad
+                      </label>
                       <input
                         type="text"
-                        class="form-control"
-                        placeholder="Recipient's username"
-                        aria-label="Recipient's username"
-                        aria-describedby="button-addon2"
+                        className="form-control imput"
+                        id="CodProp"
+                        placeholder="Codigo de Propiedad"
                       />
-                      <button
-                        class="btn btn-outline-secondary"
-                        type="button"
-                        id="button-addon2"
-                      >
-                        Button
-                      </button>
-                    </div>
+                      <div class="d-grid gap-2 d-md-block">
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-sm"
+                        >
+                          Buscar
+                        </button>
+                      </div>
+                      <br />
+                      <div className="container">
+                        <div className="row">
+                          <div className="col">
+                            <label for="HoraIn" class="form-label">
+                              Desde
+                            </label>
+                            <input
+                              type="time"
+                              className="form-control"
+                              id="HoraIn"
+                            />
+                          </div>
+                          <div className="col">
+                            <label for="HoraFin" className="form-label">
+                              Hasta
+                            </label>
+                            <input
+                              type="time"
+                              className="form-control"
+                              id="HoraFin"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <br />
+                      <label for="Fecha" className="form-label">
+                        Fecha
+                      </label>
+                      <input
+                        type="date"
+                        className="form-control imput"
+                        id="Fecha"
+                      />
+                      <br />
+                      <br />
+                      <br />
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-primary btn-sm ">
+                          Agregar turno
+                        </button>
+                      </div>
+
+                      <br />
+                    </form>
                   </div>
-                  <div className="col "></div>
                 </div>
               </div>
             </>
