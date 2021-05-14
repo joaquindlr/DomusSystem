@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import ReporteVentas from "../components/ReporteVentas";
-const ConsultaReporte = () => {
-  const [mostrar, setMostrar] = useState(false);
+import ReporteVenta from "../components/ReporteVenta";
+import ReporteAlquiler from "../components/ReporteAlquiler";
+import ReporteCliente from "../components/ReporteCliente";
+import ReportePropiedad from "../components/ReportePropiedad";
+import { useForm } from "react-hook-form";
+
+const ListasReporte = () => {
+
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log("hola:", data.eleccion);
+
+  const [valor, setValor] = useState();
+
+  const onSubmit = (data) => {
+    console.log("hola:", data.eleccion);
+    setValor(data.eleccion);
+  };
+
   return (
     <>
       <div className="container">
@@ -29,43 +40,40 @@ const ConsultaReporte = () => {
                   backgroundColor: "white",
                 }}
               >
-                <div className="row mx-auto ps-4">
-                  <div className="col-3 ms-4 p-0">
-                    <div class="input-group">
+                <div className="row mx-auto">
+                  <div className="col-4 mx-0">
+                    <div className="input-group mb-3">
                       <label class="input-group-text" for="inputGroupSelect01">
                         Tipo
                       </label>
                       <select
-                        className="form-control w-25"
+                        class="form-select"
+                        id="inputGroupSelect01"
                         {...register("eleccion")}
                       >
-                        <option selected>...</option>
-                        <option value={1}>Venta</option>
+                        <option selected>opciones...</option>
+                        <option value={1}>Ventas</option>
                         <option value={2}>Alquiler</option>
-                        <option value={3}>Cliente</option>
-                        <option value={4}>Propiedad</option>
+                        <option value={3}>Clientes</option>
+                        <option value={4}>Propiedades</option>
                       </select>
                     </div>
                   </div>
-                  <div className="col-6">
+                  <div className="col-6 mx-0">
                     <div class="input-group mb-3">
-                      <span class="input-group-text">Desde</span>
+                    <span class="input-group-text">Desde</span>
                       <input
                         type="date"
                         class="form-control"
-                        placeholder="fecha"
-                        aria-label="fecha"
                       />
                       <span class="input-group-text">Hasta</span>
                       <input
                         type="date"
                         class="form-control"
-                        placeholder="fecha"
-                        aria-label="fecha"
                       />
                     </div>
                   </div>
-                  <div className="col-2 p-0 m-0">
+                  <div className="col-2 mx-0">
                     <button
                       className="btn btn-primary"
                       onClick={handleSubmit(onSubmit)}
@@ -75,7 +83,7 @@ const ConsultaReporte = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-search"
+                        class="bi bi-search"
                         viewBox="0 0 16 16"
                       >
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -83,14 +91,11 @@ const ConsultaReporte = () => {
                     </button>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="row">
-                    <div className="col p-3">
-                      {mostrar && (
-                        <ReporteVentas className="ms-4">holas</ReporteVentas>
-                      )}
-                    </div>
-                  </div>
+                <div className="row mx-auto p-0 m-0">
+                  {valor == 1 && <ReporteVenta/>}
+                  {valor == 2 && <ReporteAlquiler/>}
+                  {valor == 3 && <ReporteCliente/>}
+                  {valor == 4 && <ReportePropiedad/>}
                 </div>
               </div>
             </div>
@@ -101,4 +106,4 @@ const ConsultaReporte = () => {
   );
 };
 
-export default ConsultaReporte;
+export default ListasReporte;
