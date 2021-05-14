@@ -10,6 +10,7 @@ import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
 import Login from "../pages/login";
+import Solicitudes from "../pages/Solicitudes";
 import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
 import Registro from "../pages/registro";
@@ -77,6 +78,11 @@ const routes = [
       {
         path: "/login",
         component: Login,
+        exact: true,
+      },
+      {
+        path: "/solicitudes",
+        component: Solicitudes,
         exact: true,
       },
       {
