@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 const ConsultaReporte = () => {
-  const [parte, setParte] = useState(0);
   return (
     <>
       <div className="container">
@@ -33,17 +32,11 @@ const ConsultaReporte = () => {
                       </label>
                       <select class="form-select" id="inputGroupSelect01">
                         <option selected>...</option>
-                        <option parte="1">Venta</option>
-                        <option parte="2">Alquiler</option>
-                        <option parte="3">Cliente</option>
-                        <option parte="4">Propiedad</option>
+                        <option value="1">Venta</option>
+                        <option value="2">Alquiler</option>
+                        <option value="3">Cliente</option>
+                        <option value="4">Propiedad</option>
                       </select>
-                      <form className="">
-              {parte == 1 && <Venta />}
-              {parte == 2 && <Alquiler />}
-              {parte == 3 && <Cliente />}
-               {parte == 4 && <Propiedad />}
-            </form>
                     </div>
                   </div>
                   <div className="col-6">
@@ -65,7 +58,7 @@ const ConsultaReporte = () => {
                     </div>
                   </div>
                   <div className="col-2 p-0 m-0">
-                    <a className="btn btn-primary" href="#" role="button">
+                    <button className="btn btn-primary" type="button" >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -76,7 +69,7 @@ const ConsultaReporte = () => {
                       >
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div className="row">

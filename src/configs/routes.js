@@ -9,7 +9,11 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
-import Login from "../pages/login"
+import Login from "../pages/login";
+import Solicitudes from "../pages/Solicitudes";
+import Reportes from "../pages/Reportes";
+import ConsultaReporte from "../pages/ConsultaReporte";
+import Registro from "../pages/registro";
 //register
 
 //Other
@@ -82,6 +86,22 @@ const routes = [
         component: Login,
         exact: true,
       },
+      {
+        path: "/solicitudes",
+        component: Solicitudes,
+        exact: true,
+      },
+      {
+        path: "/reportes",
+        component: Reportes,
+        exact: true,
+      },
+      {
+        path: "/registro",
+        component: Registro,
+        exact: true,
+      },
+      { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
       {
         component: Error404,
       },

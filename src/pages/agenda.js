@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import ModalPropiedades from "../components/ModalPropiedades";
 import ModalAgente from "../components/ModalAgente";
 import ModalCita from "../components/ModalCita";
+import ModalProp from "../components/ModalProp";
+import ModalAg from "../components/ModalAg";
+import ModalEd from "../components/ModalEd";
+import CitaAgendada from "../components/CitaAgendada";
 
 const Agenda = () => {
   const [visible, setVisible] = useState(false);
@@ -18,6 +22,25 @@ const Agenda = () => {
   const handleVisible2 = () => {
     setVisible2(false);
   };
+  const [visiblep, setVisiblep] = useState(false);
+  const handleVisiblep = () => {
+    setVisiblep(false);
+  };
+
+  const [visiblea, setVisiblea] = useState(false);
+  const handleVisiblea = () => {
+    setVisiblea(false);
+  };
+
+  const [visiblee, setVisiblee] = useState(false);
+  const handleVisiblee = () => {
+    setVisiblee(false);
+  };
+
+  const [visiblec, setVisiblec] = useState(false);
+  const handleVisiblec = () => {
+    setVisiblec(false);
+  };
 
   return (
     <>
@@ -25,6 +48,11 @@ const Agenda = () => {
         <ModalPropiedades visible={visible} handleVisible={handleVisible} />
         <ModalAgente visible1={visible1} handleVisible1={handleVisible1} />
         <ModalCita visible2={visible2} handleVisible2={handleVisible2} />
+        <ModalProp visible={visiblep} handleVisible={handleVisiblep} />
+        <ModalAg visible={visiblea} handleVisible={handleVisiblea} />
+        <ModalEd visible={visiblee} handleVisible={handleVisiblee} />
+        <CitaAgendada visible={visiblec} handleVisible={handleVisiblec} />
+
         <div className="row">
           <div className="col-auto">
             <input type="date" classNameName="form-control input" />
@@ -36,7 +64,7 @@ const Agenda = () => {
             <br />
             <div className="row">
               <button
-                onClick={() => setVisible(true)}
+                onClick={() => setVisiblep(true)}
                 type="button"
                 className="btn btn-secondary btn-sm"
               >
@@ -46,9 +74,9 @@ const Agenda = () => {
             <br />
             <div className="row">
               <button
+                onClick={() => setVisiblea(true)}
                 type="button"
                 className="btn btn-secondary btn-sm"
-                onClick={() => setVisible1(true)}
               >
                 Filtrar por Agentes
               </button>
@@ -61,6 +89,16 @@ const Agenda = () => {
                 onClick={() => setVisible2(true)}
               >
                 Agendar Cita
+              </button>
+            </div>
+            <br />
+            <div className="row">
+              <button
+                onClick={() => setVisiblee(true)}
+                type="button"
+                className="btn btn-secondary btn-sm"
+              >
+                Editar Cita
               </button>
             </div>
           </div>
@@ -157,7 +195,18 @@ const Agenda = () => {
                   {" "}
                   <th scope="row">14:00</th>
                   <td></td>
-                  <td></td>
+                  <td class="table-info">
+                    <div class="d-grid gap-2">
+                      <button
+                        onClick={() => setVisiblec(true)}
+                        type="button"
+                        className="btn btn-outline-success btn-sm"
+                      >
+                        {" "}
+                        cita{" "}
+                      </button>
+                    </div>
+                  </td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -260,4 +309,5 @@ const Agenda = () => {
     </>
   );
 };
+
 export default Agenda;
