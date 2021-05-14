@@ -9,15 +9,11 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
-<<<<<<< HEAD
-import Login from "../pages/login"
-import Solicitudes from "../pages/Solicitudes";
-=======
 import Login from "../pages/login";
+import Solicitudes from "../pages/Solicitudes";
 import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
 import Registro from "../pages/registro";
->>>>>>> 4355c88ec4c121df15e640ac3369e8681597479b
 //register
 
 //Other
@@ -85,13 +81,11 @@ const routes = [
         exact: true,
       },
       {
-<<<<<<< HEAD
         path: "/solicitudes",
         component: Solicitudes,
         exact: true,
       },
       {
-=======
         path: "/reportes",
         component: Reportes,
         exact: true,
@@ -103,7 +97,6 @@ const routes = [
       },
       { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
       {
->>>>>>> 4355c88ec4c121df15e640ac3369e8681597479b
         component: Error404,
       },
 

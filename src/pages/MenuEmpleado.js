@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../auth/userContext";
 
 const MenuEmpleado = () => {
@@ -40,7 +41,7 @@ const MenuEmpleado = () => {
               }}
             >
               <div className="d-grid gap-2 col-5">
-                <button className="btn btn-primary" type="button">
+                <Link to="/agenda" className="btn btn-primary mb-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -53,8 +54,8 @@ const MenuEmpleado = () => {
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                   </svg>{" "}
                   Agenda
-                </button>
-                <button className="btn btn-primary" type="button">
+                </Link>
+                <Link className="btn btn-primary" to="/documentos">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -66,7 +67,7 @@ const MenuEmpleado = () => {
                     <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
                   </svg>{" "}
                   Documentos
-                </button>
+                </Link>
                 <button className="btn btn-primary" type="button">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
