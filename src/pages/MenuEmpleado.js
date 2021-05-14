@@ -68,7 +68,7 @@ const MenuEmpleado = () => {
                   </svg>{" "}
                   Documentos
                 </Link>
-                <Link to="/reportes" className="btn btn-primary">
+                <Link to="/consultas-reporte" className="btn btn-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

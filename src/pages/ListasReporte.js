@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import ReporteVentas from "../components/ReporteVentas";
 const ConsultaReporte = () => {
+  const [mostrar, setMostrar] = useState(false);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log("hola:", data.eleccion);
   return (
     <>
       <div className="container">
@@ -30,12 +35,15 @@ const ConsultaReporte = () => {
                       <label class="input-group-text" for="inputGroupSelect01">
                         Tipo
                       </label>
-                      <select class="form-select" id="inputGroupSelect01">
+                      <select
+                        className="form-control w-25"
+                        {...register("eleccion")}
+                      >
                         <option selected>...</option>
-                        <option value="1">Venta</option>
-                        <option value="2">Alquiler</option>
-                        <option value="3">Cliente</option>
-                        <option value="4">Propiedad</option>
+                        <option value={1}>Venta</option>
+                        <option value={2}>Alquiler</option>
+                        <option value={3}>Cliente</option>
+                        <option value={4}>Propiedad</option>
                       </select>
                     </div>
                   </div>
@@ -58,7 +66,10 @@ const ConsultaReporte = () => {
                     </div>
                   </div>
                   <div className="col-2 p-0 m-0">
-                    <button className="btn btn-primary" type="button" >
+                    <button
+                      className="btn btn-primary"
+                      onClick={handleSubmit(onSubmit)}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -75,38 +86,9 @@ const ConsultaReporte = () => {
                 <div className="row">
                   <div className="row">
                     <div className="col p-3">
-                      reporte ventas
-                      <table class="table p-2 me-4">
-                        <thead>
-                          <tr>
-                            <th scope="col">Codigo</th>
-                            <th scope="col">Direccion</th>
-                            <th scope="col">vendedor</th>
-                            <th scope="col">comprador</th>
-                            <th scope="col">monto</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>direccion1</td>
-                            <td>vendedor1</td>
-                            <td>comprador1</td>
-                            <td>$monto1</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>direccion2</td>
-                            <td>vendedor2</td>
-                            <td>comprador2</td>
-                            <td>$monto2</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" colspan="4">Total</th>
-                            <td>$total</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      {mostrar && (
+                        <ReporteVentas className="ms-4">holas</ReporteVentas>
+                      )}
                     </div>
                   </div>
                 </div>

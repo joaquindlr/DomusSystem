@@ -26,16 +26,16 @@ const Consulta = () => {
                 }}
               >
                 <div className="d-grid gap-2 col-5">
-                  <Link to="/" className="btn btn-primary">
+                  <Link to="/consultas-cliente" className="btn btn-primary">
                     Clientes
                   </Link>
-                  <Link to="/" className="btn btn-primary">
+                  <Link to="/consultas-propiedad" className="btn btn-primary">
                     Propiedades
                   </Link>
-                  <Link to="/" className="btn btn-primary">
+                  <Link to="/consultas-reporte" className="btn btn-primary">
                     Reportes
                   </Link>
-                  <Link to="/" className="btn btn-primary">
+                  <Link to="/consultas-empleado" className="btn btn-primary">
                     Empleados
                   </Link>
                 </div>

@@ -11,10 +11,13 @@ import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
 import Login from "../pages/login";
 import Solicitudes from "../pages/Solicitudes";
-import Reportes from "../pages/Reportes";
-import ConsultaReporte from "../pages/ConsultaReporte";
+import ConsultasReporte from "../pages/ConsultasReporte";
+import ListasReporte from "../pages/ListasReporte";
 import Registro from "../pages/registro";
-import Consultas from "../pages/Consultas"
+import Consultas from "../pages/Consultas";
+import ConsultasEmpleado from "../pages/ConsultasEmpleado";
+import ConsultasCliente from "../pages/ConsultasCliente";
+import ConsultasPropiedad from "../pages/ConsultasPropiedad";
 //register
 
 //Other
@@ -93,8 +96,8 @@ const routes = [
         exact: true,
       },
       {
-        path: "/reportes",
-        component: Reportes,
+        path: "/consultas-reporte",
+        component: ConsultasReporte,
         exact: true,
       },
       {
@@ -102,13 +105,31 @@ const routes = [
         component: Registro,
         exact: true,
       },
-      { path: "/consulta-reporte",
-      component: ConsultaReporte,
-      exact: true 
+      { 
+        path: "/listas-reporte",
+        component: ListasReporte,
+        exact: true 
       },
-      { path:"/consultas",
-      component: Consultas,
-      exact: true
+      { 
+        path:"/consultas",
+        component: Consultas,
+        exact: true
+      },
+      { 
+        path:"/consultas-empleado",
+        component: ConsultasEmpleado,
+        exact: true
+      },
+      {
+        path:"/consultas-cliente",
+        component: ConsultasCliente,
+        exact: true
+      },
+      
+      {
+        path:"/consultas-propiedad",
+        component: ConsultasPropiedad,
+        exact: true
       },
       {
         component: Error404,

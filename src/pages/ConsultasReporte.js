@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Reportes = () => {
+const ConsultasReporte = () => {
   return (
     <>
       <div className="container">
@@ -29,7 +29,7 @@ const Reportes = () => {
                   <Link to="/" className="btn btn-primary">
                     Generar Reportes
                   </Link>
-                  <Link to="/" className="btn btn-primary">
+                  <Link to="/listas-reporte" className="btn btn-primary">
                     Visualizar Reporte
                   </Link>
                 </div>
@@ -42,4 +42,4 @@ const Reportes = () => {
   );
 };
 
-export default Reportes;
+export default ConsultasReporte;
