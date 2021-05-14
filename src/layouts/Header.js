@@ -86,7 +86,7 @@ function Header() {
                   className='nav-links'
                   onClick={closeMobileMenu}
                 >
-                  Q&A
+                  Contacto
                 </Link>
               </li>
               {/* <li className='nav-btn'>
