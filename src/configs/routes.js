@@ -14,6 +14,7 @@ import Solicitudes from "../pages/Solicitudes";
 import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
 import Registro from "../pages/registro";
+import GestionPropiedades from "../pages/GestionPropiedades";
 //register
 
 //Other
@@ -101,7 +102,13 @@ const routes = [
         component: Registro,
         exact: true,
       },
-      { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
+     
+      { path: "/consulta-reporte", component: ConsultaReporte, exact: true }, 
+      {
+        path: "/gestion-propiedades",
+        component: GestionPropiedades,
+        exact: true,
+      },
       {
         component: Error404,
       },
