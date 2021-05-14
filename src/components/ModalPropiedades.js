@@ -15,17 +15,18 @@ const Modal = ({ visible, handleVisible }) => {
           <div
             style={{
               backgroundColor: "white",
-              height: "15rem",
-              width: "25rem",
+              height: "90%",
+              width: "45rem",
               position: "fixed",
-              top: "5rem",
+              top: "3rem",
               bottom: 0,
-              right: "35%",
-              borderRadius: 10,
+              right: "30%",
+              borderRadius: 5,
+              overflowY: "scroll",
             }}
           >
             <>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end  m-3">
                 <button
                   onClick={() => handleVisible(false)}
                   className="btn btn-white"
