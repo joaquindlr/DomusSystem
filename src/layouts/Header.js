@@ -1,12 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import { BiBuildingHouse } from 'react-icons/bi';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../auth/userContext";
 
-import { useHistory } from "react-router-dom";
 
-const Header = () => {
+function Header() {
+  //Manejo de navbar para login
   const history = useHistory();
-
   const [empleado, setEmpleado] = useState(false);
   const [logeado, setLogeado] = useState(false);
   const [userData, setUserData] = useContext(UserContext);
@@ -34,68 +38,155 @@ const Header = () => {
     history.push("/");
   };
 
+//manejo de navbar para responsiveness
+  const [click, setClick] = useState(false);
+  // const [button, setButton] = useState(true);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  // const showButton = () => {
+  //   if (window.innerWidth <= 960) {
+  //     setButton(false);
+  //   } else {                 Esto de aca no sirve para nada pero bueno aca queda por las dudas
+  //     setButton(true);
+  //   }
+  // };
+
   return (
-    <div
-      style={{ backgroundColor: "#2D4F81" }}
-      className=" d-flex justify-content-between"
-    >
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h3 className="text-light py-3 ms-4">Inmobiliaria Domus</h3>
-      </Link>
-      <div className="mt-3">
-        <Link className="text-decoration-none text-light me-4 fs-4" to="#">
-          Quienes somos
-        </Link>
-        <Link className="text-decoration-none text-light me-4 fs-4" to="#">
-          Contactenos
-        </Link>
-        {!logeado ? (
+    <>  
+      <IconContext.Provider value={{ color: '#fff' }}> 
+        <nav className='navbar'>
+          <div className='navbar-container container'>
+            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+              <BiBuildingHouse className='navbar-icon' />
+              DOMUS
+            </Link>
+            <div className='menu-icon' onClick={handleClick}>
+              {click ? <FaTimes /> : <FaBars />}              {/* Cambia el icono a desplegar/cerrar menú */}
+            </div>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+              <li className='nav-item'>
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  Home
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/nosotros-info'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Nosotros
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/q-and-a'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Q&A
+                </Link>
+              </li>
+              {/* <li className='nav-btn'>
+                {button ? (
+                  <Link to='/login' className='btn-link'>
+                    <button type="button" class="btn btn-light">Secondary</button>
+                  </Link>
+                ) : (                                                               Esto de aca no sirve para nada pero bueno aca queda por las dudas
+                  <Link to='/sign-up' className='btn-link'>
+                    <Button
+                      buttonStyle='btn--primary' buttonColor="blue" 
+                      buttonSize='btn--mobile'
+                      onClick={() => setClick(false)}
+                    >
+                      Login
+                    </Button>
+                  </Link>
+                )}
+              </li> */}
+               
+                {/* <li>
+                <Link
+                  to='/Login'
+                  className='nav-links-hlight'
+                  onClick={closeMobileMenu}
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/Registro'
+                  className='nav-links-hlight-secondary'
+                  onClick={closeMobileMenu}
+                >
+                  Register
+                </Link>
+              </li>
+                   <li>
+                   <Link
+                     to='/Menu-empleado'
+                     className='nav-links-hlight'
+                     onClick={closeMobileMenu}
+                   >
+                     Menú
+                   </Link>
+                 </li> */}
+
+                 {!logeado ? (
           <>
-            <Link
-              to="/login"
-              style={{ color: "#2D4F81", fontWeight: "bold" }}
-              className="btn btn-light fs-5 me-4 ms-4 btn-sm"
-            >
-              Ingresar
-            </Link>
-            <Link
-              to="/registro"
-              style={{ color: "#2D4F81", fontWeight: "bold" }}
-              className="btn btn-light fs-5 me-4 btn-sm"
-            >
-              Registrarse
-            </Link>
+             <li>
+                <Link
+                  to='/Login'
+                  className='nav-links-hlight'
+                  onClick={closeMobileMenu}
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='/Registro'
+                  className='nav-links-hlight-secondary'
+                  onClick={closeMobileMenu}
+                >
+                  Register
+                </Link>
+              </li>
           </>
         ) : (
           <>
             {empleado && (
+              <li>
               <Link
-                to="/menu-empleado"
-                style={{
-                  color: "#2D4F81",
-                  fontWeight: "bold",
-                  marginTop: "-0.5rem",
-                }}
-                className="btn btn-light fs-5 me-4 btn-sm"
+                to='/Menu-empleado'
+                className='nav-links-hlight'
+                onClick={closeMobileMenu}
               >
-                Menu
+                Menú
               </Link>
+            </li>
             )}
-            <button
-              onClick={() => cerrarSesion()}
-              style={{
-                color: "#2D4F81",
-                fontWeight: "bold",
-                marginTop: "-0.5rem",
-              }}
-              className="btn btn-light fs-5 me-4 btn-sm"
-            >
-              Cerrar sesion
-            </button>
+            <li>
+                   <Link
+                     to='/'
+                     className='nav-links-hlight-secondary'
+                     onClick={closeMobileMenu, cerrarSesion}   /*El menu en móbil no se cierra cuando cerrás sesión no se por qué xd */
+                   >
+                     Cerrar sesión
+                   </Link>
+                 </li>
           </>
         )}
-      </div>
-    </div>
+            </ul>
+          </div>
+        </nav>
+      </IconContext.Provider>
+    </>
   );
-};
+}
+
 export default Header;
+
