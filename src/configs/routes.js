@@ -18,6 +18,7 @@ import Registro from "../pages/registro";
 
 //Other
 import Error404 from "../pages/Error404";
+import NuevaPropiedad from "../pages/NuevaPropiedad";
 //agenda
 import agenda from "../pages/agenda";
 //cita
@@ -63,6 +64,11 @@ const routes = [
       {
         path: "/registro-corporativo",
         component: NuevoClienteCorporativo,
+        exact: true,
+      },
+      {
+        path: "/nueva-propiedad",
+        component: NuevaPropiedad,
         exact: true,
       },
       {
