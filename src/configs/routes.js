@@ -9,11 +9,20 @@ import NuevoClienteParticular from "../pages/NuevoClienteParticular";
 import NuevoClienteCorporativo from "../pages/NuevoClienteCorporativo";
 import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
-
+import Login from "../pages/login";
+import Solicitudes from "../pages/Solicitudes";
+import Reportes from "../pages/Reportes";
+import ConsultaReporte from "../pages/ConsultaReporte";
+import Registro from "../pages/registro";
 //register
 
 //Other
 import Error404 from "../pages/Error404";
+import NuevaPropiedad from "../pages/NuevaPropiedad";
+//agenda
+import agenda from "../pages/agenda";
+//cita
+import cita from "../pages/cita";
 
 const routes = [
   {
@@ -26,6 +35,17 @@ const routes = [
         component: Home,
         exact: true,
       },
+      {
+        path: "/agenda",
+        component: agenda,
+        exact: true,
+      },
+      {
+        path: "/cita",
+        component: cita,
+        exact: true,
+      },
+
       {
         path: "/propiedad/:id",
         component: Propiedad,
@@ -47,6 +67,11 @@ const routes = [
         exact: true,
       },
       {
+        path: "/nueva-propiedad",
+        component: NuevaPropiedad,
+        exact: true,
+      },
+      {
         path: "/menu-empleado",
         component: MenuEmpleado,
         exact: true,
@@ -57,8 +82,35 @@ const routes = [
         exact: true,
       },
       {
+        path: "/login",
+        component: Login,
+        exact: true,
+      },
+      {
+        path: "/solicitudes",
+        component: Solicitudes,
+        exact: true,
+      },
+      {
+        path: "/reportes",
+        component: Reportes,
+        exact: true,
+      },
+      {
+        path: "/registro",
+        component: Registro,
+        exact: true,
+      },
+      { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
+      {
         component: Error404,
       },
+
+      // {
+      //   path: "/propiedad",
+      //   component: Propiedad,
+      //   exact: true
+      // }
     ],
   },
 ];
