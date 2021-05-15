@@ -1,0 +1,62 @@
+/* HERO SECTION */
+.hero-container{
+    background: url(https://eskipaper.com/images/1080p-wallpapers-7.jpg)
+     center center/cover no-repeat;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container > h1{
+    font-size: 100px;
+    margin-top: 100px ;
+    color: white;
+    text-shadow: 0px 0px 4px black ;
+}
+
+.hero-container > p{
+    font-size: 30px;
+    margin-top: 15px;
+    color: white;
+    /* font-family:'Trebuchet MS'; */
+    font-weight: 400;
+}
+
+.hero-link{
+    color: white;
+    font-size: 30px;
+    background-color: rgb(6, 114, 114);
+    border-radius: 4px ;
+    padding: 1rem 2rem;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: flex;
+
+}
+
+.hero-link:hover{
+    color: white;
+    outline: 5px solid white;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .hero-container > h1{
+        font-size: 75px;
+        margin-top: 100px;
+
+    }
+
+    .hero-link{
+
+        font-size: 25px ;
+
+    }
+}
+
