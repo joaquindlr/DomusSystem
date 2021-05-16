@@ -11,9 +11,12 @@ import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
 import Login from "../pages/login";
 import Solicitudes from "../pages/Solicitudes";
-import Reportes from "../pages/Reportes";
-import ConsultaReporte from "../pages/ConsultaReporte";
+import GestionReportes from "../pages/GestionReportes";
 import Registro from "../pages/registro";
+import Consultas from "../pages/Consultas";
+import GestionEmpleados from "../pages/GestionEmpleados";
+import GestionClientes from "../pages/GestionClientes";
+import GestionPropiedades from "../pages/GestionPropiedades";
 //register
 
 //Other
@@ -92,8 +95,8 @@ const routes = [
         exact: true,
       },
       {
-        path: "/reportes",
-        component: Reportes,
+        path: "/gestion-reportes",
+        component: GestionReportes,
         exact: true,
       },
       {
@@ -101,7 +104,31 @@ const routes = [
         component: Registro,
         exact: true,
       },
-      { path: "/consulta-reporte", component: ConsultaReporte, exact: true },
+      { 
+        path:"/consultas",
+        component: Consultas,
+        exact: true
+      },
+      { 
+        path:"/gestion-empleados",
+        component: GestionEmpleados,
+        exact: true
+      },
+      {
+        path:"/gestion-clientes",
+        component: GestionClientes,
+        exact: true
+      },
+      { 
+        path: "/gestion-reportes", 
+        component: GestionReportes, 
+        exact: true
+      }, 
+      {
+        path: "/gestion-propiedades",
+        component: GestionPropiedades,
+        exact: true,
+      },
       {
         component: Error404,
       },
