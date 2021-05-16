@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../auth/userContext";
+import { Link } from "react-router-dom";
 
 import users from "../configs/users";
 
@@ -65,60 +66,67 @@ const Login = () => {
 
   return (
     <div
+      className="rounded-3 py-5 shadow w-100"
       style={{
-        paddingTop: "4rem",
-        paddingBottom: "4rem",
+        height: "40rem",
         display: "grid",
         placeItems: "center",
-        backgroundColor: "#f2f2f2",
-        paddingTop: "2rem",
+        backgroundColor: "white",
       }}
     >
-      <div
-        className="rounded-3 py-5 shadow "
-        style={{
-          width: "30rem",
-          height: "30rem",
-          display: "grid",
-          placeItems: "center",
-          backgroundColor: "white",
-        }}
-      >
-        <div>
-          <h2 className="mb-4 text-center">Iniciar sesion</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="mb-3">
-              <label for="email" class="form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                defaultValue=""
-                name="email"
-                {...register("email")}
-              />
-              {errorEmail && <p>El email esta vacio</p>}
-            </div>
-            <div class="mb-3">
-              <label for="contraseña" class="form-label">
-                Contraseña
-              </label>
-              <input
-                type="password"
-                class="form-control"
-                name="contraseña"
-                id="contraseña"
-                {...register("contraseña")}
-              />
-              {errorPassword && <p>La contraseña esta vacia</p>}
-            </div>
-            <button type="submit" className="btn btn-primary w-100">
-              Iniciar sesion
-            </button>
-          </form>
-        </div>
+      <div>
+        <h2 className="mb-4 text-center">Iniciar sesion</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div class="mb-3">
+            <label for="email" class="form-label">
+              Email
+            </label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              defaultValue=""
+              name="email"
+              {...register("email")}
+            />
+            {errorEmail && (
+              <p className="text-danger fw-bold">El email esta vacio</p>
+            )}
+          </div>
+          <div class="mb-3">
+            <label for="contraseña" class="form-label">
+              Contraseña
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              name="contraseña"
+              id="contraseña"
+              {...register("contraseña")}
+            />
+            {errorPassword && (
+              <p className="text-danger fw-bold">La contraseña esta vacia</p>
+            )}
+          </div>
+          <button type="submit" className="btn btn-primary w-100">
+            Iniciar sesion
+          </button>
+        </form>
+        <Link
+          className=""
+          to="#"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          Olvidaste tu contraseña?
+        </Link>
+        <br />
+        <Link
+          className=""
+          to="/registro"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          Registrarse
+        </Link>
       </div>
     </div>
   );

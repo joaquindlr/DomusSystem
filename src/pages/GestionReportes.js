@@ -4,6 +4,7 @@ import ReporteAlquiler from "../components/ReporteAlquiler";
 import ReporteCliente from "../components/ReporteCliente";
 import ReportePropiedad from "../components/ReportePropiedad";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const ConsultasReporte = () => {
   const { register, handleSubmit } = useForm();
@@ -17,7 +18,7 @@ const ConsultasReporte = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="">
         <div
           style={{
             display: "grid",
@@ -27,15 +28,25 @@ const ConsultasReporte = () => {
             paddingBottom: "2rem",
           }}
         >
+          <Link
+            to="/consultas"
+            style={{
+              placeSelf: "flex-start",
+              marginLeft: "1rem",
+              textDecoration: "none",
+              color: "black",
+              fontSize: "1.5rem",
+            }}
+          >
+            ← Volver a consultas
+          </Link>
           <div className="row">
             <div className="col m-3">
               <div
                 className="rounded-3 py-5 shadow"
                 style={{
                   width: "60rem",
-                  height: "100%",
-                  display: "grid",
-                  placeItems: "center",
+                  height: "35rem",
                   backgroundColor: "white",
                 }}
               >

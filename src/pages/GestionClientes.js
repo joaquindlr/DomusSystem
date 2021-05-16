@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ConsultaCliente = () => {
   return (
     <>
-      <div className="container">
+      <div className="">
         <div
           style={{
             display: "grid",
@@ -13,6 +13,18 @@ const ConsultaCliente = () => {
             paddingBottom: "2rem",
           }}
         >
+          <Link
+            to="/consultas"
+            style={{
+              placeSelf: "flex-start",
+              marginLeft: "1rem",
+              textDecoration: "none",
+              color: "black",
+              fontSize: "1.5rem",
+            }}
+          >
+            ← Volver a consultas
+          </Link>
           <div className="row">
             <div className="col m-3">
               <div
