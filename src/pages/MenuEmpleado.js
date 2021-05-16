@@ -41,7 +41,7 @@ const MenuEmpleado = () => {
               }}
             >
               <div className="d-grid gap-2 col-5">
-                <Link to="/agenda" className="btn btn-primary mb-3">
+                <Link to="/agenda" className="btn btn-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -68,7 +68,7 @@ const MenuEmpleado = () => {
                   </svg>{" "}
                   Documentos
                 </Link>
-                <Link to="/consultas-reporte" className="btn btn-primary">
+                <Link to="/gestion-reportes" className="btn btn-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -110,7 +110,7 @@ const MenuEmpleado = () => {
                   </svg>{" "}
                   Consultas
                 </Link>
-                <Link to="/" className="btn btn-primary">
+                <Link to="#" className="btn btn-primary">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -123,7 +123,7 @@ const MenuEmpleado = () => {
                   </svg>{" "}
                   Ir al catalogo
                 </Link>
-                <Link to="/" className="btn btn-primary mt-5">
+                <Link to="registro-empleado" className="btn btn-primary mt-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

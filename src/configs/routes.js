@@ -11,13 +11,12 @@ import MenuEmpleado from "../pages/MenuEmpleado";
 import Documentacion from "../pages/Documentacion";
 import Login from "../pages/login";
 import Solicitudes from "../pages/Solicitudes";
-import ConsultasReporte from "../pages/ConsultasReporte";
-import ListasReporte from "../pages/ListasReporte";
+import GestionReportes from "../pages/GestionReportes";
 import Registro from "../pages/registro";
 import Consultas from "../pages/Consultas";
-import ConsultasEmpleado from "../pages/ConsultasEmpleado";
-import ConsultasCliente from "../pages/ConsultasCliente";
-import ConsultasPropiedad from "../pages/ConsultasPropiedad";
+import GestionEmpleados from "../pages/GestionEmpleados";
+import GestionClientes from "../pages/GestionClientes";
+import GestionPropiedades from "../pages/GestionPropiedades";
 //register
 
 //Other
@@ -96,8 +95,8 @@ const routes = [
         exact: true,
       },
       {
-        path: "/consultas-reporte",
-        component: ConsultasReporte,
+        path: "/gestion-reportes",
+        component: GestionReportes,
         exact: true,
       },
       {
@@ -106,30 +105,29 @@ const routes = [
         exact: true,
       },
       { 
-        path: "/listas-reporte",
-        component: ListasReporte,
-        exact: true 
-      },
-      { 
         path:"/consultas",
         component: Consultas,
         exact: true
       },
       { 
-        path:"/consultas-empleado",
-        component: ConsultasEmpleado,
+        path:"/gestion-empleados",
+        component: GestionEmpleados,
         exact: true
       },
       {
-        path:"/consultas-cliente",
-        component: ConsultasCliente,
+        path:"/gestion-clientes",
+        component: GestionClientes,
         exact: true
       },
-      
-      {
-        path:"/consultas-propiedad",
-        component: ConsultasPropiedad,
+      { 
+        path: "/gestion-reportes", 
+        component: GestionReportes, 
         exact: true
+      }, 
+      {
+        path: "/gestion-propiedades",
+        component: GestionPropiedades,
+        exact: true,
       },
       {
         component: Error404,

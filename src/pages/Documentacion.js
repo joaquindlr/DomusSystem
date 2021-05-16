@@ -31,22 +31,20 @@ const Documentacion = () => {
             backgroundColor: "white",
           }}
         >
-          <div className="container">
-            <div className="row border m-3">
-              <div className="col my-1">
-                <div className="row mx-auto ">
-                  <div className="col-9 pt-3 pe-2 m-0  ">
+          <div className="row">
+            <div className="row border">
+              <div className="col">
+                <div className="row">
+                  <div className="col-9 ">
                     <input
                       type="text"
                       className="form-control "
                       placeholder="Documento"
-                      aria-label="Recipient's username"
-                      aria-describedby="button-addon2"
                     />
                   </div>
-                  <div className="col-3 p-0 pb-1 ">
-                    <div className=" p-0 ">
-                      <button className="btn btn-secondary" type="button">
+                  <div className="col-3 mb-2">
+                    <div>
+                      <button className="btn btn-primary" type="button">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -64,12 +62,12 @@ const Documentacion = () => {
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                   <div class="mb-3">
                     <input
-                      className="form-control mt-3 ms-2"
+                      className="form-control"
                       type="file"
                       id="formFile"
                     />
                     <button
-                      className="btn btn-primary ms-2"
+                      className="btn btn-primary mt-2"
                       type="button"
                       onClick={() => guardarArchivo()}
                     >
@@ -93,7 +91,7 @@ const Documentacion = () => {
                   </div>
                 </div>
               </div>
-              <div className="col mt-3">
+              <div className="col">
                 <table className="table table-bordered border-primary">
                   <thead>
                     <tr>

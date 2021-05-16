@@ -25,17 +25,25 @@ const Consulta = () => {
                   backgroundColor: "white",
                 }}
               >
-                <div className="d-grid gap-2 col-5">
-                  <Link to="/consultas-cliente" className="btn btn-primary">
+                
+                <h3>Consultas</h3>
+                <div className="row mb-2">
+                  <Link to="/gestion-clientes" className="btn btn-primary">
                     Clientes
                   </Link>
-                  <Link to="/consultas-propiedad" className="btn btn-primary">
+                </div>
+                <div className="row mb-2">
+                  <Link to="/gestion-propiedades" className="btn btn-primary">
                     Propiedades
                   </Link>
-                  <Link to="/consultas-reporte" className="btn btn-primary">
+                </div>
+                <div className="row mb-2">
+                  <Link to="/gestion-reportes" className="btn btn-primary">
                     Reportes
                   </Link>
-                  <Link to="/consultas-empleado" className="btn btn-primary">
+                </div>
+                <div className="row mb-2">
+                  <Link to="/gestion-empleados" className="btn btn-primary">
                     Empleados
                   </Link>
                 </div>
