@@ -29,7 +29,8 @@ import {RiCoinsFill} from "react-icons/ri"
                                              flex:"1",
                                              alignItems:"center",
                                             marginTop:"80px",
-                                            backgroundColor:"teal"}}>
+                                            backgroundColor:"teal",
+                                           }}>
             {/* <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="card-img-top" alt="..."/> */}
             <RiCoinsFill></RiCoinsFill>          
         
@@ -93,17 +94,91 @@ import {RiCoinsFill} from "react-icons/ri"
 
 {/* CASITASSS */}
 
-<div className="container-fluid" style={{backgroundColor:"white"}}>
-<h5>Aca elegis que tipo de casita te gusta </h5>
-<div className="row ">
+<div className="container-fluid" style={{backgroundColor:"white", flexFlow:"column",
+                                        maxWidth:"1120px", margin:"0 auto"}}>
+<p className="fs-2" style={{marginTop:"50px", marginBottom:"50px", 
+                             textAlign:"center",
+                             fontWeight:"bold"}}>
+                            Aca elegis que tipo de casita te gusta
+                            </p>
+<div className="row g-0" >
+        
+        <div className="col" > 
+         <div className="card mx-auto" style={{width:"22rem",                               
+                                             display:"flex", 
+                                             flex:"1",
+                                             alignItems:"center",
+                                            marginBottom:"80px" ,                                            
+                                            boxShadow:" 0 2px 10px gray",
+                                            overflow:"hidden"
+                                            }}>
+            <Link to="/" style={{color:"black", textDecoration:"none"}}> 
+            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="imgcard-top" alt="..."/> 
+            <div className="card-body">
+                <h5 className="card-title" style={{}}>Frente al mar</h5>
+                <p className="card-text" style={{}} >
+                aca les va un poco de informacion confidencial,todas
+                las cartas tienen que tener 3 lineas
+                </p>
+            </div> 
+            </Link>
+            </div>                  
+         </div> 
 
-        <div className="col">
-         <div className="card mx-auto" style={{width:"15rem",                                     
+         <div className="col" > 
+         <div className="card mx-auto" style={{width:"22rem",                               
+                                             display:"flex", 
+                                             flex:"1",                                          
+                                             alignItems:"center",
+                                            marginBottom:"80px" ,                                            
+                                            boxShadow:" 0 2px 10px gray",
+                                            overflow:"hidden"
+                                            }}>
+            <Link to="/" style={{color:"black", textDecoration:"none"}}> 
+            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="imgcard-top" alt="..."/> 
+            <div className="card-body" style={{height:"100%"}}>
+                <h5 className="card-title" style={{}}>Hi this is title</h5>
+                <p className="card-text" style={{}} >
+                Porque o sino pasa esto, y se ve todo deforme xd
+                </p>
+            </div> 
+            </Link>
+            </div>                  
+         </div> 
+      
+         <div className="col" > 
+         <div className="card mx-auto" style={{width:"22rem",                               
                                              display:"flex", 
                                              flex:"1",
                                              alignItems:"center",
-                                             marginTop:"80px"}}>
-            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="card-img-top" alt="..."/> 
+                                            marginBottom:"80px" ,                                            
+                                            boxShadow:" 0 2px 10px gray",
+                                            overflow:"hidden"
+                                            }}>
+            <Link to="/" style={{color:"black", textDecoration:"none"}}> 
+            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="imgcard-top" alt="..."/> 
+            <div className="card-body">
+                <h5 className="card-title" style={{}}>Hi this is title</h5>
+                <p className="card-text" style={{}} >
+                Pero los profesores no tienen por qué saberlo y no 
+                se como se arregla asi que así queda
+                </p>
+            </div> 
+            </Link>
+            </div>                  
+         </div> 
+
+         <div className="col" > 
+         <div className="card mx-auto" style={{width:"22rem",                               
+                                             display:"flex", 
+                                             flex:"1",
+                                             alignItems:"center",
+                                            marginBottom:"80px" ,                                            
+                                            boxShadow:" 0 2px 10px gray",
+                                            overflow:"hidden"
+                                            }}>
+            <Link to="/" style={{color:"black", textDecoration:"none"}}> 
+            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="imgcard-top" alt="..."/> 
             <div className="card-body">
                 <h5 className="card-title" style={{}}>Hi this is title</h5>
                 <p className="card-text" style={{}} >
@@ -111,15 +186,21 @@ import {RiCoinsFill} from "react-icons/ri"
                 make up the bulk of the card's content.
                 </p>
             </div> 
+            </Link>
+            </div>                  
          </div> 
-        </div> 
-        <div className="col">
-         <div className="card mx-auto" style={{width:"15rem",                                     
+
+         <div className="col" > 
+         <div className="card mx-auto" style={{width:"22rem",                               
                                              display:"flex", 
                                              flex:"1",
                                              alignItems:"center",
-                                             marginTop:"80px"}}>
-            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="card-img-top" alt="..."/> 
+                                            marginBottom:"80px" ,                                            
+                                            boxShadow:" 0 2px 10px gray",
+                                            overflow:"hidden"
+                                            }}>
+            <Link to="/" style={{color:"black", textDecoration:"none"}}> 
+            <img src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390" class="imgcard-top" alt="..."/> 
             <div className="card-body">
                 <h5 className="card-title" style={{}}>Hi this is title</h5>
                 <p className="card-text" style={{}} >
@@ -127,8 +208,16 @@ import {RiCoinsFill} from "react-icons/ri"
                 make up the bulk of the card's content.
                 </p>
             </div> 
+            </Link>
+            </div>                  
          </div> 
-        </div> 
+    
+
+     
+     
+
+
+
 </div>
 </div>
 
