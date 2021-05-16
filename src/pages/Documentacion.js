@@ -32,7 +32,7 @@ const Documentacion = () => {
           }}
         >
           <div className="row">
-            <div className="row border">
+            <div className="row border p-4">
               <div className="col">
                 <div className="row">
                   <div className="col-9 ">
@@ -61,11 +61,7 @@ const Documentacion = () => {
                 </div>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                   <div class="mb-3">
-                    <input
-                      className="form-control"
-                      type="file"
-                      id="formFile"
-                    />
+                    <input className="form-control" type="file" id="formFile" />
                     <button
                       className="btn btn-primary mt-2"
                       type="button"

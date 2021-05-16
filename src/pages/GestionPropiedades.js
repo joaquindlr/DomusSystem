@@ -15,7 +15,7 @@ const GestionPropiedades = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="">
         <VerPropiedad
           visible={visiblepropiedad}
           handleVisible={handleVisiblepropiedad}
@@ -30,6 +30,18 @@ const GestionPropiedades = () => {
             paddingBottom: "2rem",
           }}
         >
+          <Link
+            to="/consultas"
+            style={{
+              placeSelf: "flex-start",
+              marginLeft: "3rem",
+              textDecoration: "none",
+              color: "black",
+              fontSize: "1.5rem",
+            }}
+          >
+            ← Volver a consultas
+          </Link>
           <div className="row px-5">
             <div className="col">
               <div
