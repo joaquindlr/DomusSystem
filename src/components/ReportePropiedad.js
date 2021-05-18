@@ -9,7 +9,7 @@ const ReportePropiedad = () => {
             <th scope="col">Codigo</th>
             <th scope="col">Direccion</th>
             <th scope="col">Agente</th>
-            <th scope="col">Propietario</th>
+            <th scope="col">Locador</th>
             <th scope="col">Monto</th>
           </tr>
         </thead>
@@ -18,28 +18,28 @@ const ReportePropiedad = () => {
             <th scope="row">1</th>
             <td>Direccion1</td>
             <td>Agente1</td>
-            <td>Propietario1</td>
+            <td>Locador1</td>
             <td>$Monto1</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Direccion2</td>
             <td>Agente2</td>
-            <td>Propietario2</td>
+            <td>Locador2</td>
             <td>$Monto2</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Direccion3</td>
             <td>Agente3</td>
-            <td>Propietario3</td>
+            <td>Locador3</td>
             <td>$Monto3</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>Direccion4</td>
             <td>Agente4</td>
-            <td>Propietario4</td>
+            <td>Locador4</td>
             <td>$Monto4</td>
           </tr>
         </tbody>

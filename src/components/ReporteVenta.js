@@ -9,7 +9,7 @@ const ReporteVenta = () => {
             <th scope="col">Codigo</th>
             <th scope="col">Direccion</th>
             <th scope="col">Agente</th>
-            <th scope="col">Comprador</th>
+            <th scope="col">Locatario</th>
             <th scope="col">Monto</th>
           </tr>
         </thead>
@@ -18,28 +18,28 @@ const ReporteVenta = () => {
             <th scope="row">1</th>
             <td>Direccion1</td>
             <td>Agente1</td>
-            <td>Comprador1</td>
+            <td>Locatario1</td>
             <td>$Monto1</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Direccion2</td>
             <td>Agente2</td>
-            <td>Comprador2</td>
+            <td>Locatario2</td>
             <td>$Monto2</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Direccion3</td>
             <td>Agente3</td>
-            <td>Comprador3</td>
+            <td>Locatario3</td>
             <td>$Monto3</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>Direccion4</td>
             <td>Agente4</td>
-            <td>Comprador4</td>
+            <td>Locatario4</td>
             <td>$Monto4</td>
           </tr>
         </tbody>
