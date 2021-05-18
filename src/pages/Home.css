@@ -1,7 +1,6 @@
 /* HERO SECTION */
 .hero-container {
-  background: url(http://www.arquitecturaenacero.org/sites/arquitecturaenacero.org/files/proyectos/00-20-casa-vista-al-lago-28.jpg)
-    center center/cover no-repeat;
+  background: url("../fondo.jpg") center center/cover no-repeat;
   align-items: center;
   height: 100vh;
   width: 100%;
