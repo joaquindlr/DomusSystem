@@ -9,14 +9,14 @@ function Footer() {
     <div className='footer-container'>
       
         <p className='footer-heading'>
-          Slogan de la empresa maybe idk
+        Encontra un hogar para vos
         </p>
 
     
       <div className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
-            <h2>About Us</h2>
+            <h2>Nosotros</h2>
             <Link to='/login'>lorem</Link>
             <Link to='/'>lorem</Link>
             <Link to='/'>lorem</Link>
