@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-const CardPropiedad = ({ imagen, precio, id, condicion }) => {
+const CardPropiedad = ({titulo,descripcion, imagen, precio, id, condicion }) => {
   const history = useHistory();
 
   const irPropiedad = () => {
@@ -11,8 +11,8 @@ const CardPropiedad = ({ imagen, precio, id, condicion }) => {
   return (
     <div className="pt-5 px-5 pb-5">
       <div
-        className="card"
-        style={{ width: "20rem", cursor: "pointer" }}
+        className="card overflow-hidden"
+        style={{ width: "15rem", cursor: "pointer" }}
         onClick={() => irPropiedad()}
       >
         <img
@@ -42,7 +42,7 @@ const CardPropiedad = ({ imagen, precio, id, condicion }) => {
         </div>
         <div className="card-img-overlay">
           <div
-            className="bg-success"
+            // className="bg-success"
             style={{
               justifyContent: "center",
               display: "flex",
@@ -50,6 +50,7 @@ const CardPropiedad = ({ imagen, precio, id, condicion }) => {
               borderRadius: 20,
               marginLeft: "5.5rem",
               marginTop: "10.75rem",
+              backgroundColor:"teal"
             }}
           >
             <p
@@ -61,13 +62,9 @@ const CardPropiedad = ({ imagen, precio, id, condicion }) => {
           </div>
         </div>
         <div className="card-body" style={{ height: "16rem" }}>
-          <h5 className="card-title">Lorem ipsum</h5>
+          <h5 className="card-title">{titulo}</h5>
           <p className="card-text">
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+           {descripcion}
           </p>
         </div>
       </div>

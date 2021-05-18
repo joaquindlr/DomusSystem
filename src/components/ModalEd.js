@@ -27,10 +27,10 @@ const ModalEd = ({ visible, handleVisible }) => {
           <div
             style={{
               backgroundColor: "white",
-              height: "90%",
+              height: "80%",
               width: "45rem",
               position: "fixed",
-              top: "3rem",
+              top: "6rem",
               bottom: 0,
               right: "30%",
               borderRadius: 5,

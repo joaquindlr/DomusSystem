@@ -34,11 +34,11 @@ const Consulta = () => {
                     Propiedades
                   </Link>
                 </div>
-                <div className="row mb-2">
+                {/* <div className="row mb-2">
                   <Link to="/gestion-reportes" className="btn btn-primary">
                     Reportes
                   </Link>
-                </div>
+                </div> */}
                 <div className="row mb-2">
                   <Link to="/gestion-empleados" className="btn btn-primary">
                     Empleados

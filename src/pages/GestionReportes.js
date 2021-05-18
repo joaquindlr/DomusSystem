@@ -28,7 +28,7 @@ const ConsultasReporte = () => {
             paddingBottom: "2rem",
           }}
         >
-          <Link
+          {/* <Link
             to="/consultas"
             style={{
               placeSelf: "flex-start",
@@ -39,7 +39,7 @@ const ConsultasReporte = () => {
             }}
           >
             ← Volver a consultas
-          </Link>
+          </Link> */}
           <div className="row">
             <div className="col m-3">
               <div
