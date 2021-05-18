@@ -148,7 +148,7 @@ function Home() {
             fontWeight: "bold",
           }}
         >
-          ¿Qué buscás para tu nuevo hogar?
+          ¿Qué tipo de casa estas buscando para tu nuevo hogar?
         </p>
 
         <div className="cards__container">
