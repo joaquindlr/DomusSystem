@@ -15,6 +15,7 @@ import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
 import Registro from "../pages/registro";
 import Catalog from "../pages/Catalog";
+import Contacto from "../pages/Contacto";
 //register
 
 //Other
@@ -50,6 +51,12 @@ const routes = [
       {
         path: "/catalogo",
         component: Catalog,
+        exact: true,
+      },
+
+      {
+        path: "/contacto",
+        component: Contacto,
         exact: true,
       },
 

@@ -69,7 +69,7 @@ function Header() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to='/q-and-a' className='nav-links'
+                <Link to='/contacto' className='nav-links'
                  onClick={closeMobileMenu}>
                   Contacto
                 </Link>
