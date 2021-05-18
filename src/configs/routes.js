@@ -14,6 +14,7 @@ import Solicitudes from "../pages/Solicitudes";
 import Reportes from "../pages/Reportes";
 import ConsultaReporte from "../pages/ConsultaReporte";
 import Registro from "../pages/registro";
+import Catalog from "../pages/Catalog";
 //register
 
 //Other
@@ -43,6 +44,12 @@ const routes = [
       {
         path: "/cita",
         component: cita,
+        exact: true,
+      },
+
+      {
+        path: "/catalogo",
+        component: Catalog,
         exact: true,
       },
 
@@ -105,6 +112,7 @@ const routes = [
       {
         component: Error404,
       },
+     
 
       // {
       //   path: "/propiedad",

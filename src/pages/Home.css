@@ -1,6 +1,6 @@
 /* HERO SECTION */
 .hero-container{
-    background: url(https://eskipaper.com/images/1080p-wallpapers-7.jpg)
+    background: url(http://www.arquitecturaenacero.org/sites/arquitecturaenacero.org/files/proyectos/00-20-casa-vista-al-lago-28.jpg)
      center center/cover no-repeat;
     align-items: center;
     height: 100vh;
@@ -15,13 +15,15 @@
     margin-top: 100px ;
     color: white;
     text-shadow: 0px 0px 4px black ;
+    font-weight: bold;
 }
 
 .hero-container > p{
     font-size: 30px;
     margin-top: 15px;
     color: white;
-    /* font-family:'Trebuchet MS'; */
+    text-shadow: 0px 0px 4px black ;
+    font-family:'Trebuchet MS';
     font-weight: 400;
 }
 
@@ -47,6 +49,10 @@
 }
 
 @media screen and (max-width: 960px) {
+    .hero-container{
+        height: 120vh;
+    }
+
     .hero-container > h1{
         font-size: 75px;
         margin-top: 100px;
@@ -54,9 +60,20 @@
     }
 
     .hero-link{
-
         font-size: 25px ;
-
+        margin-bottom: 20px;
     }
+}
+
+/*Casitas */
+.imgcard-top{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imgcard-top:hover{
+    transform: scale(1.04);
+    transition: all 0.3s ease;
 }
 
