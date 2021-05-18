@@ -53,8 +53,9 @@ const Agenda = () => {
         <ModalEd visible={visiblee} handleVisible={handleVisiblee} />
         <CitaAgendada visible={visiblec} handleVisible={handleVisiblec} />
 
-        <div className="row">
-          <div className="col-auto">
+        <div className="row ps-4">
+          <div className="col-auto mt-4">
+            <p className="fs-5">Fecha:</p>
             <input type="date" classNameName="form-control input" />
             <br />
             <br />
