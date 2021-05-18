@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { GiFamilyHouse, GiPadlock } from "react-icons/gi";
+import { GiFamilyHouse } from "react-icons/gi";
 import { IconContext } from "react-icons/lib";
-import { RiCoinsFill } from "react-icons/ri";
+import { RiCoinsFill, RiFilePaper2Line } from "react-icons/ri";
 import CardItem from "../components/CardItem";
 import "../components/Cards.css";
 
@@ -51,7 +51,7 @@ function Home() {
                     className="card-title text-white"
                     style={{ textAlign: "center" }}
                   >
-                    Lorem, ipsum dolor.
+                    La mejor financiacion
                   </h5>
                   <p
                     className="card-text text-white"
@@ -83,7 +83,7 @@ function Home() {
                     className="card-title text-white"
                     style={{ textAlign: "center" }}
                   >
-                    Lorem, ipsum dolor.
+                    Casas para todos los gustos y precios
                   </h5>
                   <p
                     className="card-text text-white"
@@ -110,14 +110,14 @@ function Home() {
                   marginBottom: "80px",
                 }}
               >
-                <GiPadlock></GiPadlock>
+                <RiFilePaper2Line />
 
                 <div className="card-body">
                   <h5
                     className="card-title text-white"
                     style={{ textAlign: "center" }}
                   >
-                    Lorem, ipsum dolor.
+                    Contrato rapido y sin tercerizaciones
                   </h5>
                   <p
                     className="card-text text-white"
@@ -156,13 +156,13 @@ function Home() {
             <ul className="cards__items">
               <CardItem
                 src="https://images.adsttc.com/media/images/5be9/fd5c/08a5/e5a5/8c00/008f/large_jpg/CARLES_FAUS_ARQUITECTURA_-_CARMEN_HOUSE_(2).jpg?1542061390"
-                title="Casas a la venta Casas a la venta Casas a la venta Casas a la venta"
+                title="Casas en venta"
                 condicion="Venta"
                 path="/catalogo"
               />
               <CardItem
                 src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
-                title="Casas en alquiler Casas en alquiler Casas en alquiler Casas en alquiler"
+                title="Casas en alquiler"
                 condicion="Alquiler"
                 path="/catalogo"
               />
@@ -170,19 +170,19 @@ function Home() {
             <ul className="cards__items">
               <CardItem
                 src="https://cdn.archilovers.com/projects/c_383_f31f5407-90dc-4f95-b7f2-f478f3884aec.jpg"
-                title="Casas frente al mar Casas frente al mar Casas frente al mar"
+                title="Casas con vista al mar"
                 condicion="Frente al mar"
                 path="/catalogo"
               />
               <CardItem
                 src="https://www.homedizz.com/wp-content/uploads/2016/09/interior-design-for-contemporary-small-house.jpg"
-                title="Casas interiores pequeños Casas interiores pequeños Casas interiores pequeños"
+                title="Casas con interiores pequeños"
                 condicion="Interiores pequeños"
                 path="/catalogo"
               />
               <CardItem
                 src="https://ohmyapt.apartmentratings.com/wp-content/uploads/2017/10/balcony-main.jpeg"
-                title="Departamentos Departamentos Departamentos"
+                title="Departamentos"
                 condicion="Departamentos"
                 path="/catalogo"
               />
