@@ -15,10 +15,10 @@ const Modal = ({ visible2, handleVisible2 }) => {
           <div
             style={{
               backgroundColor: "white",
-              height: "90%",
+              height: "80%",
               width: "45rem",
               position: "fixed",
-              top: "3rem",
+              top: "6rem",
               bottom: 0,
               right: "30%",
               borderRadius: 5,

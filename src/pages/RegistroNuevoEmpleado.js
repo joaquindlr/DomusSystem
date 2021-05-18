@@ -9,6 +9,7 @@ const RegistroNuevoEmpleado = () => {
           placeItems: "center",
           backgroundColor: "#f2f2f2",
           paddingTop: "2rem",
+          paddingBottom: "2rem",
         }}
       >
         <div
