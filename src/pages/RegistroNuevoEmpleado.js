@@ -27,6 +27,7 @@ const RegistroNuevoEmpleado = () => {
               placeItems: "center",
             }}
           >
+            <h2 className="mb-4">Registrar nuevo empleado</h2>
             <form className="">
               <label for="AyN" className="form-label">
                 Apellido y Nombre

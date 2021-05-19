@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <div className="hero-container">
+      <div className="hero-container pb-5">
         <h1
           className="text-center"
           style={{
@@ -22,7 +22,9 @@ function Home() {
         >
           ENCONTRA UN HOGAR PARA VOS
         </h1>
-        <p> El lugar ideal para vivir está a un click de distancia </p>
+        <p className="text-center">
+          El lugar ideal para vivir está a un click de distancia
+        </p>
         <Link to="/catalogo" className="hero-link">
           IR AL CATALOGO
         </Link>

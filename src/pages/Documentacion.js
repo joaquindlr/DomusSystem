@@ -31,8 +31,9 @@ const Documentacion = () => {
             backgroundColor: "white",
           }}
         >
+          <h2>Documentos generales</h2>
           <div className="row">
-            <div className="row border p-4">
+            <div className="row  p-4">
               <div className="col">
                 <div className="row">
                   <div className="col-9 ">
@@ -44,7 +45,7 @@ const Documentacion = () => {
                   </div>
                   <div className="col-3 mb-2">
                     <div>
-                      <button className="btn btn-primary" type="button">
+                      <button className="btn btn-primary w-100" type="button">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -63,7 +64,7 @@ const Documentacion = () => {
                   <div class="mb-3">
                     <input className="form-control" type="file" id="formFile" />
                     <button
-                      className="btn btn-primary mt-2"
+                      className="btn btn-primary mt-2 w-100"
                       type="button"
                       onClick={() => guardarArchivo()}
                     >

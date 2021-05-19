@@ -26,12 +26,16 @@ const Propiedad = () => {
         paddingTop: "1rem",
       }}
     >
+      <h2 className="ps-5">{casa && casa.titulo}</h2>
       <div className="ms-5 d-flex">
-        <p className="me-1 bg-success text-light fs-5 px-2 py-1 rounded-3">
+        <p
+          className="me-1 text-light fs-5 px-2 py-1 rounded-3"
+          style={{ backgroundColor: "teal" }}
+        >
           {casa && casa.condicion}
         </p>
         <p
-          style={{ backgroundColor: "#2D4F81" }}
+          style={{ backgroundColor: "#1c2237" }}
           className="me-5 text-light fs-5 px-2 py-1 rounded-3"
         >
           {casa && casa.precio}

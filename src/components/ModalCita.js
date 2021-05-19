@@ -82,7 +82,7 @@ const Modal = ({ visible2, handleVisible2 }) => {
                         type="number"
                         className="form-control imput"
                         id="CodCli"
-                        placeholder="Codigo cliente..."
+                        placeholder="Codigo de cliente"
                         style={{ height: "2.5rem" }}
                       />
                       <button
@@ -105,7 +105,7 @@ const Modal = ({ visible2, handleVisible2 }) => {
                         type="number"
                         className="form-control imput"
                         id="CodCli"
-                        placeholder="Codigo de cliente..."
+                        placeholder="Codigo de propiedad"
                         style={{ height: "2.5rem" }}
                       />
                       <button
