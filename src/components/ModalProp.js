@@ -51,6 +51,10 @@ const ModalProp = ({ visible, handleVisible }) => {
                 </button>
               </div>
 
+              <h2 className="text-center mt-2 mb-4">
+                Filtrar cita por Propiedad
+              </h2>
+
               <div class="d-grid  col-10 mx-auto">
                 <label for="CodCli" className="form-label">
                   Ingresar codigo de propiedad

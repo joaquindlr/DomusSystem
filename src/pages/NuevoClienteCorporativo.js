@@ -20,6 +20,8 @@ const NuevoClienteCorporativo = () => {
             backgroundColor: "white",
           }}
         >
+          <h2 className="mb-4">Nuevo cliente corporativo</h2>
+
           <div
             style={{
               display: "grid",
@@ -138,6 +140,7 @@ const NuevoClienteCorporativo = () => {
             display: "grid",
             placeItems: "center",
             backgroundColor: "white",
+            marginBottom: "2rem",
           }}
         >
           <div
@@ -146,10 +149,8 @@ const NuevoClienteCorporativo = () => {
               placeItems: "center",
             }}
           >
-            <div>
-              <label for="formFileMultiple" className="form-label imput ">
-                <h2>Subir documentos</h2>
-              </label>
+            <div className="p-5">
+              <p className="fw-bolder fs-2">Subir documentos</p>
               <input
                 className="form-control "
                 type="file"

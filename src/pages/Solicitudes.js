@@ -27,7 +27,7 @@ const Solicitudes = () => {
               placeItems: "center",
             }}
           >
-            <h2>Solicitudes de clientes</h2>
+            <h2>Solicitudes de citas</h2>
             <br></br>
             <div className="container">
               <div className="row">

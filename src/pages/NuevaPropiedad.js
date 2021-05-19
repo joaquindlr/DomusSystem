@@ -40,6 +40,7 @@ const NuevaPropiedad = () => {
               placeItems: "center",
             }}
           >
+            <h2>Nueva propiedad</h2>
             <form className="">
               {parte == 1 && <Parte1 />}
               {parte == 2 && <Parte2 />}
