@@ -19,6 +19,7 @@ import Consultas from "../pages/Consultas";
 import GestionEmpleados from "../pages/GestionEmpleados";
 import GestionClientes from "../pages/GestionClientes";
 import GestionPropiedades from "../pages/GestionPropiedades";
+import Nosotros from "../pages/Nosotros";
 //register
 
 //Other
@@ -141,6 +142,11 @@ const routes = [
       {
         path: "/gestion-propiedades",
         component: GestionPropiedades,
+        exact: true,
+      },
+      {
+        path: "/nosotros",
+        component: Nosotros,
         exact: true,
       },
       {

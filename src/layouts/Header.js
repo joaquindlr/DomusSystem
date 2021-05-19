@@ -64,16 +64,19 @@ function Header() {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/nosotros-info"
+                  to="/nosotros"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
                   Nosotros
                 </Link>
               </li>
-              <li className='nav-item'>
-                <Link to='/contacto' className='nav-links'
-                 onClick={closeMobileMenu}>
+              <li className="nav-item">
+                <Link
+                  to="/contacto"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   Contacto
                 </Link>
               </li>
