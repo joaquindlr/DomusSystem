@@ -14,6 +14,7 @@ import Solicitudes from "../pages/Solicitudes";
 import GestionReportes from "../pages/GestionReportes";
 import Registro from "../pages/registro";
 import Catalog from "../pages/Catalog";
+import Contacto from "../pages/Contacto";
 import Consultas from "../pages/Consultas";
 import GestionEmpleados from "../pages/GestionEmpleados";
 import GestionClientes from "../pages/GestionClientes";
@@ -53,6 +54,12 @@ const routes = [
       {
         path: "/catalogo",
         component: Catalog,
+        exact: true,
+      },
+
+      {
+        path: "/contacto",
+        component: Contacto,
         exact: true,
       },
 
