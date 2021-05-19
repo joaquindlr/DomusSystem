@@ -13,6 +13,7 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState(false);
   const [usuario, setUsuario] = useState({});
   const history = useHistory();
+  const [errorCombinacion, setErrorCombinacion] = useState(false);
 
   const [userData, setUserData] = useContext(UserContext);
 
@@ -60,6 +61,8 @@ const Login = () => {
         if (parseInt(data.contraseña) === user.pass) {
           correcto(user);
         }
+      } else {
+        setErrorCombinacion(true);
       }
     });
   };
@@ -108,6 +111,11 @@ const Login = () => {
               <p className="text-danger fw-bold">La contraseña esta vacia</p>
             )}
           </div>
+          {errorCombinacion && (
+            <p style={{ color: "red", width: "11rem" }}>
+              La combinacion de usuario y/o contraseña es incorrecta
+            </p>
+          )}
           <button type="submit" className="btn btn-primary w-100">
             Iniciar sesion
           </button>
