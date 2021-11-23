@@ -109,6 +109,35 @@ function Catalog() {
                   En alquiler
                 </label>
               </div>
+              <div className="d-flex">
+                <label className="me-2" htmlFor="flexCheckChecked">
+                  Habitaciones:
+                </label>
+                <input
+                  className="iputs-filtros"
+                  type="number"
+                  id="flexCheckChecked"
+                />
+              </div>
+              <div className="d-flex">
+                <label className="me-2" htmlFor="flexCheckChecked">
+                  Zona:
+                </label>
+                <input
+                  className="iputs-filtros-zona"
+                  type="text"
+                  id="flexCheckChecked"
+                />
+              </div>
+              <p className="mt-2 mb-0">Tipo de inmueble</p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>-</option>
+                <option value="1">Casa</option>
+                <option value="2">Departamento</option>
+                <option value="3">Oficina</option>
+                <option value="4">Cochera</option>
+                <option value="4">Salon comercial</option>
+              </select>
               <button className="btn btn-primary mt-2">Aplicar filtros</button>
             </div>
           </div>

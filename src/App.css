@@ -40,3 +40,14 @@
 .imput {
   width: 20rem;
 }
+
+.iputs-filtros {
+  max-width: 3rem;
+  height: 2rem;
+}
+
+.iputs-filtros-zona {
+  width: 100%;
+  height: 2rem;
+  margin-top: 3px;
+}
