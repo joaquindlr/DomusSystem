@@ -7,10 +7,11 @@ import { getAllPropiedades } from "../services/propiedades.service";
 function Catalog() {
   window.scrollTo(0, 0);
   const [opFiltro, setOpFiltro] = useState(false);
+  const [propiedades, setPropiedades] = useState([]);
 
   React.useEffect(function () {
     getAllPropiedades()
-      .then((res) => console.log("res:", res))
+      .then((res) => setPropiedades(res))
       .catch((err) => console.warn(err));
   }, []);
 
@@ -120,14 +121,14 @@ function Catalog() {
           }}
         >
           <div className="displayGrid">
-            {ArrayPropiedades.map((casa, index) => (
+            {propiedades.map((casa, index) => (
               <CardItem
-                title={casa.titulo}
+                title={casa.ubicacion}
                 description={casa.descripcion}
                 src={casa.imagen}
                 price={casa.precio}
                 id={casa.id}
-                condicion={casa.condicion}
+                condicion={casa.tipoContrato}
                 path={`/propiedad/${casa.id}`}
                 key={index}
               />

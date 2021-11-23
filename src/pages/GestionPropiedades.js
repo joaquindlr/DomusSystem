@@ -1,17 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import VerPropiedad from "../components/VerPropiedad";
+import { getAllPropiedades } from "../services/propiedades.service";
 
 const GestionPropiedades = () => {
-  const [visible, setVisible] = useState(false);
-  const handleVisible = () => {
-    setVisible(false);
-  };
-
   const [visiblepropiedad, setVisiblepropiedad] = useState(false);
   const handleVisiblepropiedad = () => {
     setVisiblepropiedad(false);
   };
+  const [propiedades, setPropiedades] = React.useState([]);
+  const [propSeleccionada, setPropSeleccionada] = React.useState(null);
+
+  function onPressVer(propiedad) {
+    setPropSeleccionada(propiedad);
+    setVisiblepropiedad(true);
+  }
+
+  useEffect(function () {
+    getAllPropiedades()
+      .then((res) => {
+        setPropiedades(res);
+      })
+      .catch((e) => console.warn(e));
+  }, []);
 
   return (
     <>
@@ -19,6 +30,7 @@ const GestionPropiedades = () => {
         <VerPropiedad
           visible={visiblepropiedad}
           handleVisible={handleVisiblepropiedad}
+          propiedad={propSeleccionada}
         />
 
         <div
@@ -89,8 +101,43 @@ const GestionPropiedades = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td scope="row">Propiedad1</td>
+                          {propiedades.map((propiedad) => {
+                            return (
+                              <tr>
+                                <td>{propiedad.id}</td>
+                                <td>{propiedad.tipo}</td>
+                                <td>{propiedad.tipoContrato}</td>
+                                <td>{propiedad.nroCliente}</td>
+                                <td>{propiedad.precio}</td>
+                                <td>
+                                  {propiedad.disponibilidad
+                                    ? "Disponible"
+                                    : "No disponible"}
+                                </td>
+                                <td>
+                                  <button class="btn btn-primary" type="button">
+                                    Editar
+                                  </button>
+                                </td>
+                                <td>
+                                  <button
+                                    onClick={() => onPressVer(propiedad)}
+                                    type="button"
+                                    className="btn btn-success "
+                                  >
+                                    Ver
+                                  </button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-danger" type="button">
+                                    Eliminar
+                                  </button>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                          {/* <tr>
+                            <td>Propiedad1</td>
                             <td>Casa</td>
                             <td>Alquiler</td>
                             <td>Cliente1</td>
@@ -117,7 +164,7 @@ const GestionPropiedades = () => {
                             </td>
                           </tr>
                           <tr>
-                            <td scope="row">Propiedad2</td>
+                            <td>Propiedad2</td>
                             <td>Departamento</td>
                             <td>Venta</td>
                             <td>Cliente2</td>
@@ -140,7 +187,7 @@ const GestionPropiedades = () => {
                             </td>
                           </tr>
                           <tr>
-                            <td scope="row">Propiedad3</td>
+                            <td>Propiedad3</td>
                             <td>Tipo</td>
                             <td>Alquiler</td>
                             <td>Cliente3</td>
@@ -163,7 +210,7 @@ const GestionPropiedades = () => {
                             </td>
                           </tr>
                           <tr>
-                            <td scope="row">Propiedad4</td>
+                            <td>Propiedad4</td>
                             <td>Tipo</td>
                             <td>Venta</td>
                             <td>Cliente4</td>
@@ -184,7 +231,7 @@ const GestionPropiedades = () => {
                                 Eliminar
                               </button>
                             </td>
-                          </tr>
+                          </tr> */}
                         </tbody>
                       </table>
                     </div>

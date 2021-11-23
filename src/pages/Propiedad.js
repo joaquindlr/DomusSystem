@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-import ArrayPropiedades from "../constant/propiedades";
+import { getPropiedadById } from "../services/propiedades.service";
 
 const Propiedad = () => {
-  const [params, setParam] = useState(useParams());
+  const [params] = useState(useParams());
   const [casa, setCasa] = useState();
-  const [logeado, setLogeado] = useState(true);
-
-  const encontrarCasa = () => {
-    setCasa(ArrayPropiedades.filter((x) => x.id == params.id)[0]);
-  };
+  const [logeado] = useState(true);
 
   useEffect(() => {
-    // console.log(window.matchMedia("(min-width: 1100px)").matches);
-    encontrarCasa();
-    // console.log(casa);
-  }, [casa]);
+    getPropiedadById(params.id).then((res) => {
+      setCasa(res);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
@@ -26,19 +22,19 @@ const Propiedad = () => {
         paddingTop: "1rem",
       }}
     >
-      <h2 className="ps-5">{casa && casa.titulo}</h2>
+      <h2 className="ps-5">{casa && casa.ubicacion}</h2>
       <div className="ms-5 d-flex">
         <p
           className="me-1 text-light fs-5 px-2 py-1 rounded-3"
           style={{ backgroundColor: "teal" }}
         >
-          {casa && casa.condicion}
+          {casa && casa.tipoContrato}
         </p>
         <p
           style={{ backgroundColor: "#1c2237" }}
           className="me-5 text-light fs-5 px-2 py-1 rounded-3"
         >
-          {casa && casa.precio}
+          {casa && `$${casa.precio}`}
         </p>
       </div>
       <div
@@ -49,7 +45,9 @@ const Propiedad = () => {
         }}
       >
         <div className="w-100" style={{ maxWidth: "50rem" }}>
-          {casa && <img className="rounded-3 w-100 " src={casa.imagen} />}
+          {casa && (
+            <img className="rounded-3 w-100 " alt="" src={casa.imagen} />
+          )}
         </div>
         <div className="mt-3 mt-md-0 ms-1 ms-md-4" style={{ width: "18rem" }}>
           {logeado ? (
@@ -103,17 +101,7 @@ const Propiedad = () => {
       >
         <div style={{ width: "80%" }} className="card p-3">
           <h3>Descripcion</h3>
-          <p>
-            Descripcion is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
+          <p>{casa?.descripcion}</p>
           <h5 className="mt-4">Detalles</h5>
           <div className="d-md-flex">
             <table className="table">

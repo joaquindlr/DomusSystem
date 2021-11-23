@@ -1,28 +1,41 @@
 import * as React from "react";
 
 import users from "../configs/users";
-
+import { useHistory } from "react-router-dom";
 import { registrarPropiedad } from "../services/propiedades.service";
 
 const NuevaPropiedad = () => {
+  const history = useHistory();
   const [step, setStep] = React.useState(1);
   const [userId, setUserId] = React.useState("");
   const [error, setError] = React.useState(null);
   const [userEncontrado, setUserEncontrado] = React.useState(null);
   const [nuevaPropiedad, setNuevaPropiedad] = React.useState({
-    tipo: "",
-    ubicacion: "",
-    artefactos: "",
-    espacios: "",
-    servicios: "",
-    tipoContrato: "",
-    antiguedad: "",
+    tipo: null,
+    ubicacion: null,
+    artefactos: false,
+    espacios: null,
+    servicios: null,
+    tipoContrato: null,
+    antiguedad: null,
     amueblado: false,
     disponibilidad: false,
-    precio: "",
-    imagen: "",
-    descripcion: "",
+    precio: null,
+    imagen: null,
+    descripcion: null,
+    nroCliente: null,
   });
+  const [propiedadError, setPropiedadError] = React.useState(null);
+
+  function validarCampos() {
+    for (const key in nuevaPropiedad) {
+      if (nuevaPropiedad[key] === null) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  }
 
   function onChangeTipo(e) {
     setNuevaPropiedad({
@@ -35,13 +48,6 @@ const NuevaPropiedad = () => {
     setNuevaPropiedad({
       ...nuevaPropiedad,
       ubicacion: e.target.value,
-    });
-  }
-
-  function onChangeArtefactos(e) {
-    setNuevaPropiedad({
-      ...nuevaPropiedad,
-      artefactos: e.target.value,
     });
   }
 
@@ -73,20 +79,6 @@ const NuevaPropiedad = () => {
     });
   }
 
-  function onChangeAmueblado(e) {
-    setNuevaPropiedad({
-      ...nuevaPropiedad,
-      amueblado: e.target.checked,
-    });
-  }
-
-  function onChangeDisponibilidad(e) {
-    setNuevaPropiedad({
-      ...nuevaPropiedad,
-      disponibilidad: e.target.checked,
-    });
-  }
-
   function onChangePrecio(e) {
     setNuevaPropiedad({
       ...nuevaPropiedad,
@@ -97,7 +89,7 @@ const NuevaPropiedad = () => {
   function onChangeImagen(e) {
     setNuevaPropiedad({
       ...nuevaPropiedad,
-      precio: e.target.value,
+      imagen: e.target.value,
     });
   }
 
@@ -108,9 +100,27 @@ const NuevaPropiedad = () => {
     });
   }
 
-  React.useEffect(() => {
-    console.log(nuevaPropiedad);
-  }, [nuevaPropiedad]);
+  function onChangeAmueblado(e) {
+    setNuevaPropiedad({
+      ...nuevaPropiedad,
+      amueblado: e.target.checked,
+    });
+  }
+
+  function onChangeArtefactos(e) {
+    setNuevaPropiedad({
+      ...nuevaPropiedad,
+      artefactos: e.target.checked,
+    });
+  }
+  function onChangeDisponibilidad(e) {
+    setNuevaPropiedad({
+      ...nuevaPropiedad,
+      disponibilidad: e.target.checked,
+    });
+  }
+
+  React.useEffect(() => {}, [nuevaPropiedad]);
 
   function onChangeUserId(event) {
     setUserId(event.target.value);
@@ -129,16 +139,22 @@ const NuevaPropiedad = () => {
   }
 
   function onPressSiguiente() {
+    setNuevaPropiedad({ ...nuevaPropiedad, nroCliente: userId });
     setStep(3);
   }
 
   async function onPressRegistrar(e) {
     e.preventDefault();
+    if (!validarCampos()) {
+      setPropiedadError("Revise los campos de la propiedad");
+      return;
+    }
     try {
-      const result = await registrarPropiedad(nuevaPropiedad);
-      console.log(result);
+      await registrarPropiedad(nuevaPropiedad);
+      history.push("/gestion-propiedades");
     } catch (e) {
       console.warn(e);
+      setPropiedadError("Revise los campos de la propiedad");
     }
   }
 
@@ -235,17 +251,6 @@ const NuevaPropiedad = () => {
                 />
                 <br />
                 <label htmlFor="tipo" className="form-label">
-                  Artefactos:
-                </label>
-                <input
-                  type="text"
-                  className="form-control imput"
-                  placeholder=""
-                  id="tipo"
-                  onChange={onChangeArtefactos}
-                />
-                <br />
-                <label htmlFor="tipo" className="form-label">
                   Espacios:
                 </label>
                 <input
@@ -290,28 +295,6 @@ const NuevaPropiedad = () => {
                 />
                 <br />
                 <label htmlFor="tipo" className="form-label">
-                  Amueblado:
-                </label>
-                <input
-                  type="text"
-                  className="form-control imput"
-                  placeholder=""
-                  id="tipo"
-                  onChange={onChangeAmueblado}
-                />
-                <br />
-                <label htmlFor="tipo" className="form-label">
-                  Disponibilidad:
-                </label>
-                <input
-                  type="text"
-                  className="form-control imput"
-                  placeholder=""
-                  id="tipo"
-                  onChange={onChangeDisponibilidad}
-                />
-                <br />
-                <label htmlFor="tipo" className="form-label">
                   Precio:
                 </label>
                 <input
@@ -343,6 +326,50 @@ const NuevaPropiedad = () => {
                   id="tipo"
                   onChange={onChangeDescripcion}
                 />
+                <br />
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value={nuevaPropiedad.artefactos}
+                  id="defaultCheck1"
+                  onChange={onChangeArtefactos}
+                />
+                <label
+                  className="form-check-label ms-3 mb-3"
+                  for="defaultCheck1"
+                >
+                  Artefactos
+                </label>
+                <br />
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value={nuevaPropiedad.amueblado}
+                  id="defaultCheck1"
+                  onChange={onChangeAmueblado}
+                />
+                <label
+                  className="form-check-label ms-3 mb-3"
+                  for="defaultCheck1"
+                >
+                  Amueblado
+                </label>
+                <br />
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value={nuevaPropiedad.disponibilidad}
+                  id="defaultCheck1"
+                  onChange={onChangeDisponibilidad}
+                />
+                <label
+                  className="form-check-label ms-3 mb-3"
+                  for="defaultCheck1"
+                >
+                  Disponibilidad
+                </label>
+                <br />
+                <p className="text-danger">{propiedadError}</p>
                 <button
                   className="btn btn-primary w-100 imput"
                   onClick={onPressRegistrar}
