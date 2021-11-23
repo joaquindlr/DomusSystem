@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import ArrayPropiedades from "../constant/propiedades";
 import CardItem from "../components/CardItem";
 import "../components/Cards.css";
+import { getAllPropiedades } from "../services/propiedades.service";
 
 function Catalog() {
   window.scrollTo(0, 0);
   const [opFiltro, setOpFiltro] = useState(false);
+
+  React.useEffect(function () {
+    getAllPropiedades()
+      .then((res) => console.log("res:", res))
+      .catch((err) => console.warn(err));
+  }, []);
 
   return (
     <>
